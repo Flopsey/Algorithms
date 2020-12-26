@@ -7,8 +7,8 @@ public class BinarySearch {
         int[] array = new int[] {27, 34, 39, 48, 70, 86, 87, 91, 95, 100};
         System.out.println(binarySearchRecursive(array, 39));  // 2
         System.out.println(binarySearchIterative(array, 39));  // 2
-        System.out.println(binarySearchRecursive(array, 40));  // -1 (not found)
-        System.out.println(binarySearchIterative(array, 40));  // -1 (not found)
+        System.out.println(binarySearchRecursive(array, 40));  // -4 (not found, insertion point: 3)
+        System.out.println(binarySearchIterative(array, 40));  // -4 (not found, insertion point: 3)
     }
 
     public static int binarySearchRecursive(int[] A, int b) {
@@ -17,8 +17,8 @@ public class BinarySearch {
 
     private static int binarySearchRecursive(int[] A, int b, int left, int right) {
         int n = right - left;
-        if (n <= 1) {
-            return -1;
+        if (n == 0) {
+            return -right - 1;
         }
         int middle = n / 2 + left;
         if (b == A[middle]) {
@@ -27,13 +27,15 @@ public class BinarySearch {
         if (b < A[middle]) {
             return binarySearchRecursive(A, b, left, middle);
         } else {
-            return binarySearchRecursive(A, b, middle, right);
+            return binarySearchRecursive(A, b, middle + 1, right);
         }
     }
 
     public static int binarySearchIterative(int[] A, int b) {
-        int left = 0;
-        int right = A.length - 1;
+        return binarySearchIterative(A, b, 0, A.length - 1);
+    }
+
+    static int binarySearchIterative(int[] A, int b, int left, int right) {
         while (left <= right) {
             int middle = (left + right) / 2;
             if (A[middle] == b) {
@@ -45,7 +47,7 @@ public class BinarySearch {
                 left = middle + 1;
             }
         }
-        return -1;
+        return -left - 1;
     }
 
 }
