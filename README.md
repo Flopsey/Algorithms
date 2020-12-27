@@ -3,11 +3,13 @@ Collection of various algorithms and data structures implemented in Java. The co
 ["Algorithms and Data Structures" at ETH Zürich](http://www.vorlesungsverzeichnis.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=139780&semkez=2020W&ansicht=KATALOGDATEN&lang=en)
 and [this script](https://www.cadmo.ethz.ch/education/lectures/HS16/DA/skript/skript.pdf) [access restricted].
 
-## To-do list [23% complete]
+## To-do list [27% complete]
 * [x] [Maximum subarray sum](src/MaximumSubarraySum.java)
 * Sorting and search algorithms
     * Search
         * [x] [Binary search](src/search_sort/BinarySearch.java)
+            * Variant: Recursive
+            * Variant: Iterative
         * [x] [Interpolation search](src/search_sort/InterpolationSearch.java)
         * [x] [Linear search](src/search_sort/LinearSearch.java)
     * Sorting
@@ -16,10 +18,10 @@ and [this script](https://www.cadmo.ethz.ch/education/lectures/HS16/DA/skript/sk
         * [x] [Selection sort](src/search_sort/SelectionSort.java)
         * [x] [Insertion sort](src/search_sort/InsertionSort.java)
         * [x] [Heap sort](src/search_sort/HeapSort.java)
-        * [ ] Merge sort
-            * Recursive 2-way merge sort
-            * Pure 2-way merge sort
-            * Natural 2-way merge sort
+        * [x] [Merge sort](src/search_sort/MergeSort.java)
+            * Variant: Recursive
+            * Variant: Straight merge sort (iterative)
+            * Variant: Natural merge sort
     * [ ] Quicksort
 * Dynamic Programming
     * [ ] Longest increasing subsequence
