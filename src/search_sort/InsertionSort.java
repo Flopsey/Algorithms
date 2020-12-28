@@ -9,12 +9,12 @@ public class InsertionSort {
         System.out.println(java.util.Arrays.toString(array));  // {27, 34, 39, 48, 70, 86, 87, 91, 95, 100}
     }
 
-    public static void insertionSort(int[] A) {
-        for (int i = 1; i < A.length; ++i) {
-            int k = -(BinarySearch.binarySearchIterative(A, A[i], 0, i - 1) + 1);
-            int temp = A[i];
-            System.arraycopy(A, k, A, k + 1, i - k);
-            A[k] = temp;
+    public static void insertionSort(int[] a) {
+        for (int i = 1; i < a.length; ++i) {
+            int k = -(BinarySearch.binarySearchIterative(a, a[i], 0, i - 1) + 1);
+            int temp = a[i];
+            System.arraycopy(a, k, a, k + 1, i - k);
+            a[k] = temp;
         }
     }
 

@@ -11,37 +11,37 @@ public class BinarySearch {
         System.out.println(binarySearchIterative(array, 40));  // -4 (not found, insertion point: 3)
     }
 
-    public static int binarySearchRecursive(int[] A, int b) {
-        return binarySearchRecursive(A, b, 0, A.length);
+    public static int binarySearchRecursive(int[] a, int key) {
+        return binarySearchRecursive(a, key, 0, a.length);
     }
 
-    private static int binarySearchRecursive(int[] A, int b, int left, int right) {
+    private static int binarySearchRecursive(int[] a, int key, int left, int right) {
         int n = right - left;
         if (n == 0) {
             return -right - 1;
         }
         int middle = n / 2 + left;
-        if (b == A[middle]) {
+        if (key == a[middle]) {
             return middle;
         }
-        if (b < A[middle]) {
-            return binarySearchRecursive(A, b, left, middle);
+        if (key < a[middle]) {
+            return binarySearchRecursive(a, key, left, middle);
         } else {
-            return binarySearchRecursive(A, b, middle + 1, right);
+            return binarySearchRecursive(a, key, middle + 1, right);
         }
     }
 
-    public static int binarySearchIterative(int[] A, int b) {
-        return binarySearchIterative(A, b, 0, A.length - 1);
+    public static int binarySearchIterative(int[] a, int key) {
+        return binarySearchIterative(a, key, 0, a.length - 1);
     }
 
-    static int binarySearchIterative(int[] A, int b, int left, int right) {
+    static int binarySearchIterative(int[] a, int key, int left, int right) {
         while (left <= right) {
             int middle = (left + right) / 2;
-            if (A[middle] == b) {
+            if (a[middle] == key) {
                 return middle;
             }
-            if (b < A[middle]) {
+            if (key < a[middle]) {
                 right = middle - 1;
             } else {
                 left = middle + 1;

@@ -10,9 +10,9 @@ public class Sortedness {
         System.out.println(isSorted(unsorted));  // false
     }
 
-    public static boolean isSorted(int[] A) {
-        for (int i = 0; i < A.length - 1; ++i) {
-            if (A[i] > A[i + 1]) {
+    public static boolean isSorted(int[] a) {
+        for (int i = 0; i < a.length - 1; ++i) {
+            if (a[i] > a[i + 1]) {
                 return false;
             }
         }

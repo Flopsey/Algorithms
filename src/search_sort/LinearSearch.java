@@ -9,9 +9,9 @@ public class LinearSearch {
         System.out.println(linearSearch(array, 40));  // -1 (not found)
     }
 
-    public static int linearSearch(int[] A, int b) {
-        for (int i = 0; i < A.length; ++i) {
-            if (A[i] == b) {
+    public static int linearSearch(int[] a, int key) {
+        for (int i = 0; i < a.length; ++i) {
+            if (a[i] == key) {
                 return i;
             }
         }

@@ -9,13 +9,13 @@ public class BubbleSort {
         System.out.println(java.util.Arrays.toString(array));  // {27, 34, 39, 48, 70, 86, 87, 91, 95, 100}
     }
 
-    public static void bubbleSort(int[] A) {
-        for (int j = 0; j < A.length - 1; ++j) {
-            for (int i = 0; i < A.length - j - 1; ++i) {
-                if (A[i] > A[i + 1]) {
-                    int temp = A[i];
-                    A[i] = A[i + 1];
-                    A[i + 1] = temp;
+    public static void bubbleSort(int[] a) {
+        for (int j = 0; j < a.length - 1; ++j) {
+            for (int i = 0; i < a.length - j - 1; ++i) {
+                if (a[i] > a[i + 1]) {
+                    int temp = a[i];
+                    a[i] = a[i + 1];
+                    a[i + 1] = temp;
                 }
             }
         }
