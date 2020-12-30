@@ -3,7 +3,7 @@ Collection of various algorithms and data structures implemented in Java. The co
 ["Algorithms and Data Structures" at ETH Zürich](http://www.vorlesungsverzeichnis.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=139780&semkez=2020W&ansicht=KATALOGDATEN&lang=en)
 and [this script](https://www.cadmo.ethz.ch/education/lectures/HS16/DA/skript/skript.pdf) [access restricted].
 
-## To-do list [27% complete]
+## To-do list [28% complete]
 * [x] [Maximum subarray sum](src/MaximumSubarraySum.java)
 * Sorting and search algorithms
     * Search
@@ -22,7 +22,7 @@ and [this script](https://www.cadmo.ethz.ch/education/lectures/HS16/DA/skript/sk
             * Variant: Recursive
             * Variant: Straight merge sort (iterative)
             * Variant: Natural merge sort
-    * [ ] Quicksort
+        * [x] [Quicksort](src/search_sort/QuickSort.java)
 * Dynamic Programming
     * [ ] Longest increasing subsequence
     * [ ] Longest common subsequence
