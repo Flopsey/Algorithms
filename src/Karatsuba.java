@@ -5,8 +5,8 @@ public class Karatsuba {
 
         System.out.println(karatsuba(34, 5930));  // 201620
 
-        int x = (int) (Math.pow(2, Math.random() * 32) / 2);
-        int y = (int) (Math.pow(2, Math.random() * 32) / 2);
+        int x = (int) (Math.pow(2, Math.random() * Integer.SIZE) / 2);
+        int y = (int) (Math.pow(2, Math.random() * Integer.SIZE) / 2);
         System.out.println(karatsuba(x, y) == x * y);  // true
     }
 
