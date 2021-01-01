@@ -22,14 +22,14 @@ public class Karatsuba {
             return x & y;
         }
 
-        int x_h = x >> nHalf;  // higher n/2 bits
-        int x_l = x & (1 << nHalf) - 1;  // lower n/2 bits
-        int y_h = y >> nHalf;  // higher n/2 bits
-        int y_l = y & (1 << nHalf) - 1;  // lower n/2 bits
+        int xHigh = x >> nHalf;  // higher n/2 bits
+        int xLow = x & (1 << nHalf) - 1;  // lower n/2 bits
+        int yHigh = y >> nHalf;  // higher n/2 bits
+        int yLow = y & (1 << nHalf) - 1;  // lower n/2 bits
 
-        int p1 = karatsuba(x_h, y_h);
-        int p2 = karatsuba(x_l, y_l);
-        int p3 = karatsuba(x_h + x_l, y_h + y_l);
+        int p1 = karatsuba(xHigh, yHigh);
+        int p2 = karatsuba(xLow, yLow);
+        int p3 = karatsuba(xHigh + xLow, yHigh + yLow);
 
         return (p1 << (nHalf << 1)) + ((p3 - (p1 + p2)) << nHalf) + p2;
     }
