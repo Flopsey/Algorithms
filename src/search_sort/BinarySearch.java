@@ -4,7 +4,7 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         // Example:
-        int[] array = new int[] {27, 34, 39, 48, 70, 86, 87, 91, 95, 100};
+        int[] array = {27, 34, 39, 48, 70, 86, 87, 91, 95, 100};
         System.out.println(binarySearchRecursive(array, 39));  // 2
         System.out.println(binarySearchIterative(array, 39));  // 2
         System.out.println(binarySearchRecursive(array, 40));  // -4 (not found, insertion point: 3)

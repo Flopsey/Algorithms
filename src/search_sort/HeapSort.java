@@ -4,9 +4,9 @@ public class HeapSort {
 
     public static void main(String[] args) {
         // Example:
-        int[] array = new int[] {91, 34, 86, 39, 27, 87, 70, 48, 100, 95};
+        int[] array = {91, 34, 86, 39, 27, 87, 70, 48, 100, 95};
         heapSort(array);
-        System.out.println(java.util.Arrays.toString(array));  // {27, 34, 39, 48, 70, 86, 87, 91, 95, 100}
+        System.out.println(java.util.Arrays.toString(array));  // [27, 34, 39, 48, 70, 86, 87, 91, 95, 100]
     }
 
     public static void heapSort(int[] a) {

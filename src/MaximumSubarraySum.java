@@ -2,7 +2,7 @@ public class MaximumSubarraySum {
 
     public static void main(String[] args) {
         // Example:
-        double[] array = new double[] {7, -11, 18, 10, -23, -3, 27, -1};
+        double[] array = {7, -11, 18, 10, -23, -3, 27, -1};
         System.out.println(maximumSubarraySum(array));  // 18 + 10 + -23 + -3 + 27 = 29
     }
 

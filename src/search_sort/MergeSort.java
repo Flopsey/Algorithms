@@ -3,21 +3,21 @@ package search_sort;
 public class MergeSort {
 
     public static void main(String[] args) {
-        int[] array = new int[] {91, 34, 86, 39, 27, 87, 70, 48, 100, 95};
+        int[] array = {91, 34, 86, 39, 27, 87, 70, 48, 100, 95};
 
         // Example:
 
         int[] array1 = array.clone();
         mergeSort(array1);
-        System.out.println(java.util.Arrays.toString(array1));  // {27, 34, 39, 48, 70, 86, 87, 91, 95, 100}
+        System.out.println(java.util.Arrays.toString(array1));  // [27, 34, 39, 48, 70, 86, 87, 91, 95, 100]
 
         int[] array2 = array.clone();
         straightMergeSort(array2);
-        System.out.println(java.util.Arrays.toString(array2));  // {27, 34, 39, 48, 70, 86, 87, 91, 95, 100}
+        System.out.println(java.util.Arrays.toString(array2));  // [27, 34, 39, 48, 70, 86, 87, 91, 95, 100]
 
         int[] array3 = array.clone();
         naturalMergeSort(array3);
-        System.out.println(java.util.Arrays.toString(array3));  // {27, 34, 39, 48, 70, 86, 87, 91, 95, 100}
+        System.out.println(java.util.Arrays.toString(array3));  // [27, 34, 39, 48, 70, 86, 87, 91, 95, 100]
     }
 
     public static void mergeSort(int[] A) {
