@@ -33,7 +33,7 @@ public class LongestCommonSubsequence {
         LinkedList<Character> solution = new LinkedList<>();
         int i = a.length;
         int j = b.length;
-        while (i != 0 && j != 0) {
+        while (!(i == 0 || j == 0)) {
             char charA = a[i - 1];
             char charB = b[j - 1];
             if (charA == charB) {
