@@ -1,9 +1,7 @@
 package dynamic_programming;
 
+import datastructures_for_dictionaries.LinkedList;
 import search_sort.BinarySearch;
-
-import java.util.LinkedList;
-import java.util.List;
 
 public class LongestIncreasingSubsequence {
 
@@ -13,7 +11,7 @@ public class LongestIncreasingSubsequence {
         System.out.println(longestIncreasingSubsequence(sequence));  // [4, 8, 10, 11, 16]
     }
 
-    public static List<Integer> longestIncreasingSubsequence(int[] sequence) {
+    public static LinkedList<Integer> longestIncreasingSubsequence(int[] sequence) {
         int[] table = new int[sequence.length + 1];
         int[] predecessors = new int[sequence.length];
         table[0] = Integer.MIN_VALUE;

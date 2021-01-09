@@ -1,7 +1,6 @@
 package dynamic_programming;
 
-import java.util.LinkedList;
-import java.util.List;
+import datastructures_for_dictionaries.LinkedList;
 
 public class SubsetSum {
 
@@ -10,7 +9,7 @@ public class SubsetSum {
         System.out.println(subsetSum(new int[]{5, 3, 7, 3, 1}, 9));  // [5, 3, 1] (not a unique solution)
     }
 
-    public static List<Integer> subsetSum(int[] values, int targetValue) {
+    public static LinkedList<Integer> subsetSum(int[] values, int targetValue) {
         boolean[][] table = new boolean[values.length + 1][targetValue + 1];
         table[0][0] = true;
         for (int j = 1; j < targetValue + 1; ++j) {

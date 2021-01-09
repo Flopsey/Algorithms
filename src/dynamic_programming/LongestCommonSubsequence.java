@@ -1,7 +1,6 @@
 package dynamic_programming;
 
-import java.util.LinkedList;
-import java.util.List;
+import datastructures_for_dictionaries.LinkedList;
 
 public class LongestCommonSubsequence {
 
@@ -11,7 +10,7 @@ public class LongestCommonSubsequence {
         System.out.println(longestCommonSubsequence("COVID".toCharArray(), "PARTY".toCharArray()));  // []
     }
 
-    public static List<Character> longestCommonSubsequence(char[] a, char[] b) {
+    public static LinkedList<Character> longestCommonSubsequence(char[] a, char[] b) {
         int[][] table = new int[a.length + 1][b.length + 1];
         for (int i = 0; i < a.length + 1; ++i) {
             table[i][0] = 0;

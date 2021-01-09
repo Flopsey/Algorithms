@@ -1,7 +1,6 @@
 package dynamic_programming;
 
-import java.util.LinkedList;
-import java.util.List;
+import datastructures_for_dictionaries.LinkedList;
 
 public class Knapsack {
 
@@ -14,7 +13,7 @@ public class Knapsack {
         System.out.println(knapsackApproximativeVariant(items, 15, 0.90));
     }
 
-    public static List<Item> knapsackMaxValueVariant(Item[] items, int weightLimit) {
+    public static LinkedList<Item> knapsackMaxValueVariant(Item[] items, int weightLimit) {
         int[][] table = new int[items.length + 1][weightLimit + 1];
         for (int i = 0; i < items.length + 1; ++i) {
             table[i][0] = 0;
@@ -48,7 +47,7 @@ public class Knapsack {
         return solution;
     }
 
-    public static List<Item> knapsackMinWeightVariant(Item[] items, int weightLimit) {
+    public static LinkedList<Item> knapsackMinWeightVariant(Item[] items, int weightLimit) {
         int totalValue = 0;
         for (Item item : items) {
             totalValue += item.value;
@@ -89,7 +88,7 @@ public class Knapsack {
         return solution;
     }
 
-    public static List<Item> knapsackApproximativeVariant(Item[] items, int weightLimit, double epsilon) {
+    public static LinkedList<Item> knapsackApproximativeVariant(Item[] items, int weightLimit, double epsilon) {
         int maxValue = 0;
         for (Item item : items) {
             maxValue = Math.max(maxValue, item.value);
