@@ -95,9 +95,9 @@ public class LinkedList<E> {
     }
 
     protected static class ListElement<E> {
-        private final E value;
-        private ListElement<E> prev;
-        private ListElement<E> next;
+        protected final E value;
+        protected ListElement<E> prev;
+        protected ListElement<E> next;
 
         private ListElement(E value) {
             this.value = value;
