@@ -71,6 +71,12 @@ public class LinkedList<E> {
         return size == 0;
     }
 
+    public void clear() {
+        first = null;
+        last = null;
+        size = 0;
+    }
+
     java.util.Iterator<E> iterator() {
         return new Iterator();
     }
@@ -78,7 +84,7 @@ public class LinkedList<E> {
     @Override
     public String toString() {
         StringBuilder repr = new StringBuilder();
-        java.util.Iterator<E> it = new Iterator();
+        java.util.Iterator<E> it = iterator();
         while (it.hasNext()) {
             repr.append(it.next());
             if (it.hasNext()) {
@@ -103,7 +109,7 @@ public class LinkedList<E> {
         }
     }
 
-    class Iterator implements java.util.Iterator<E> {
+    private class Iterator implements java.util.Iterator<E> {
 
         private ListElement<E> current;
 
