@@ -1,17 +1,9 @@
 package datastructures_for_dictionaries;
 
-public class Stack<E> extends LinkedList<E> {
+public interface Stack<E> {
+    void push(E e);
 
-    public void push(E e) {
-        addFirst(e);
-    }
+    E pop();
 
-    public E pop() {
-        return removeFirst();
-    }
-
-    public E top() {
-        return first.value;
-    }
-
+    E top();
 }
