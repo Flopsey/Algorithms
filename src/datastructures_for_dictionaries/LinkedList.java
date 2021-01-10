@@ -82,7 +82,7 @@ public class LinkedList<E> {
     }
 
     private ListNode<E> getNode(int i) {
-        if (i >= size) {
+        if (i < 0 || i >= size) {
             throw new IndexOutOfBoundsException();
         }
         ListNode<E> node;
