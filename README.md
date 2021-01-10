@@ -39,11 +39,11 @@ and [this script](https://www.cadmo.ethz.ch/education/lectures/HS16/DA/skript/sk
         * Variant: Min weight
         * Variant: Min weight with approximated values
 * Datastructures for dictionaries
+    * [x] [Linked List](src/datastructures_for_dictionaries/LinkedList.java)
     * Abstract data types
-        * [x] [Linked List](src/datastructures_for_dictionaries/LinkedList.java)
-        * [x] [Stack](src/datastructures_for_dictionaries/LinkedList.java)
-        * [x] [Queue](src/datastructures_for_dictionaries/Queue.java)
-        * [ ] Priority Queue
+        * [x] [Stack](src/datastructures_for_dictionaries/Stack.java) with its [implementation using a linked list](src/datastructures_for_dictionaries/LinkedListStack.java)
+        * [x] [Queue](src/datastructures_for_dictionaries/Queue.java) with its [implementation unsing a linked list](src/datastructures_for_dictionaries/LinkedListQueue.java)
+        * [x] [Priority Queue](src/datastructures_for_dictionaries/PriorityQueue.java) with its [implementation using a min-heap](src/datastructures_for_dictionaries/HeapPriorityQueue.java)
         * [ ] Dictionary
     * [ ] Natural search trees
     * [ ] AVL trees
