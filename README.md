@@ -3,7 +3,7 @@ Collection of various algorithms and data structures implemented in Java. The co
 ["Algorithms and Data Structures" at ETH Zürich](http://www.vorlesungsverzeichnis.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=139780&semkez=2020W&ansicht=KATALOGDATEN&lang=en)
 and [this script](https://www.cadmo.ethz.ch/education/lectures/HS16/DA/skript/skript.pdf) [access restricted].
 
-## To-do list [51% complete]
+## To-do list [54% complete]
 * [x] [Karatsuba](src/Karatsuba.java)
 * [x] [Maximum subarray sum](src/MaximumSubarraySum.java)
 * Sorting and search algorithms
@@ -39,11 +39,11 @@ and [this script](https://www.cadmo.ethz.ch/education/lectures/HS16/DA/skript/sk
         * Variant: Min weight
         * Variant: Min weight with approximated values
 * Datastructures for dictionaries
+    * [x] [Linked List](src/datastructures_for_dictionaries/LinkedList.java)
     * Abstract data types
-        * [x] [Linked List](src/datastructures_for_dictionaries/LinkedList.java)
-        * [x] [Stack](src/datastructures_for_dictionaries/LinkedList.java)
-        * [x] [Queue](src/datastructures_for_dictionaries/Queue.java)
-        * [ ] Priority Queue
+        * [x] [Stack](src/datastructures_for_dictionaries/Stack.java) with its [implementation using a linked list](src/datastructures_for_dictionaries/LinkedListStack.java)
+        * [x] [Queue](src/datastructures_for_dictionaries/Queue.java) with its [implementation unsing a linked list](src/datastructures_for_dictionaries/LinkedListQueue.java)
+        * [x] [Priority Queue](src/datastructures_for_dictionaries/PriorityQueue.java) with its [implementation using a min-heap](src/datastructures_for_dictionaries/HeapPriorityQueue.java)
         * [ ] Dictionary
     * [ ] Natural search trees
     * [ ] AVL trees

@@ -22,9 +22,9 @@ public class HeapSort {
     }
 
     private static void restoreHeapCondition(int[] a, int i, int heapSize) {
-        while (2 * i <= heapSize) {
-            int j = 2 * i;
-            if (j + 1 <= heapSize) {
+        while (2 * (i + 1) - 1 < heapSize) {
+            int j = 2 * (i + 1) - 1;
+            if (j + 1 < heapSize) {
                 if (a[j] < a[j + 1]) {
                     ++j;
                 }

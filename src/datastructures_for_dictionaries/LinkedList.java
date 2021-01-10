@@ -5,12 +5,12 @@ public class LinkedList<E> {
 
     /* TODO: Add tests */
 
-    protected ListElement<E> first;
-    protected ListElement<E> last;
+    protected ListNode<E> first;
+    protected ListNode<E> last;
     protected int size;
 
     public void addFirst(E e) {
-        ListElement<E> newFirst = new ListElement<>(e);
+        ListNode<E> newFirst = new ListNode<>(e);
         if (isEmpty()) {
             last = newFirst;
         } else {
@@ -22,7 +22,7 @@ public class LinkedList<E> {
     }
 
     public void addLast(E e) {
-        ListElement<E> newLast = new ListElement<>(e);
+        ListNode<E> newLast = new ListNode<>(e);
         if (isEmpty()) {
             first = newLast;
         } else {
@@ -73,6 +73,33 @@ public class LinkedList<E> {
         size = 0;
     }
 
+    E get(int i) {
+        return getNode(i).value;
+    }
+
+    void set(int i, E value) {
+        getNode(i).value = value;
+    }
+
+    private ListNode<E> getNode(int i) {
+        if (i >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        ListNode<E> node;
+        if (i <= size / 2) {
+            node = first;
+            for (int j = 0; j < i; ++j) {
+                node = node.next;
+            }
+        } else {
+            node = last;
+            for (int j = size - 1; j > i; --j) {
+                node = node.prev;
+            }
+        }
+        return node;
+    }
+
     java.util.Iterator<E> iterator() {
         return new Iterator();
     }
@@ -90,12 +117,12 @@ public class LinkedList<E> {
         return "[" + repr + "]";
     }
 
-    protected static class ListElement<E> {
-        protected final E value;
-        protected ListElement<E> prev;
-        protected ListElement<E> next;
+    protected static class ListNode<E> {
+        protected E value;
+        protected ListNode<E> prev;
+        protected ListNode<E> next;
 
-        private ListElement(E value) {
+        private ListNode(E value) {
             this.value = value;
         }
 
@@ -107,7 +134,7 @@ public class LinkedList<E> {
 
     private class Iterator implements java.util.Iterator<E> {
 
-        private ListElement<E> current;
+        private ListNode<E> current;
 
         @Override
         public boolean hasNext() {
