@@ -38,15 +38,13 @@ public class LinkedList<E> {
             return null;
         }
         E retValue = first.value;
-        if (!isEmpty()) {
-            if (first.next != null) {
-                first.next.prev = null;
-            } else {
-                last = null;
-            }
-            first = first.next;
-            --size;
+        if (first.next != null) {
+            first.next.prev = null;
+        } else {
+            last = null;
         }
+        first = first.next;
+        --size;
         return retValue;
     }
 
@@ -55,15 +53,13 @@ public class LinkedList<E> {
             return null;
         }
         E retValue = last.value;
-        if (!isEmpty()) {
-            if (last.prev != null) {
-                last.prev.next = null;
-            } else {
-                first = null;
-            }
-            last = last.prev;
-            --size;
+        if (last.prev != null) {
+            last.prev.next = null;
+        } else {
+            first = null;
         }
+        last = last.prev;
+        --size;
         return retValue;
     }
 
