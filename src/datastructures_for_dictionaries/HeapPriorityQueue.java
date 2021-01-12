@@ -4,8 +4,6 @@ public class HeapPriorityQueue<E extends Comparable<? super E>> implements Prior
 
     private final LinkedList<E> heap;
 
-    /* TODO: Add tests */
-
     public HeapPriorityQueue() {
         this.heap = new LinkedList<>();
     }

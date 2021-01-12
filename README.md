@@ -3,7 +3,7 @@ Collection of various algorithms and data structures implemented in Java. The co
 ["Algorithms and Data Structures" at ETH Zürich](http://www.vorlesungsverzeichnis.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=139780&semkez=2020W&ansicht=KATALOGDATEN&lang=en)
 and [this script](https://www.cadmo.ethz.ch/education/lectures/HS16/DA/skript/skript.pdf) [access restricted].
 
-## To-do list [54% complete]
+## To-do list [59% complete]
 * [x] [Karatsuba](src/Karatsuba.java)
 * [x] [Maximum subarray sum](src/MaximumSubarraySum.java)
 * Sorting and search algorithms
@@ -44,9 +44,9 @@ and [this script](https://www.cadmo.ethz.ch/education/lectures/HS16/DA/skript/sk
         * [x] [Stack](src/datastructures_for_dictionaries/Stack.java) with its [implementation using a linked list](src/datastructures_for_dictionaries/LinkedListStack.java)
         * [x] [Queue](src/datastructures_for_dictionaries/Queue.java) with its [implementation unsing a linked list](src/datastructures_for_dictionaries/LinkedListQueue.java)
         * [x] [Priority Queue](src/datastructures_for_dictionaries/PriorityQueue.java) with its [implementation using a min-heap](src/datastructures_for_dictionaries/HeapPriorityQueue.java)
-        * [ ] Dictionary
-    * [ ] Natural search trees
-    * [ ] AVL trees
+        * [x] [Dictionary](src/datastructures_for_dictionaries/Dictionary.java) — implemented by:
+            * [x] [Binary search trees](src/datastructures_for_dictionaries/BinarySearchTree.java)
+                * [ ] AVL tree
 * Graph algorithms
     * Graph
         * [ ] Adjacency matrix
