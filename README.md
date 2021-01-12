@@ -45,7 +45,7 @@ and [this script](https://www.cadmo.ethz.ch/education/lectures/HS16/DA/skript/sk
         * [x] [Queue](src/datastructures_for_dictionaries/Queue.java) with its [implementation unsing a linked list](src/datastructures_for_dictionaries/LinkedListQueue.java)
         * [x] [Priority Queue](src/datastructures_for_dictionaries/PriorityQueue.java) with its [implementation using a min-heap](src/datastructures_for_dictionaries/HeapPriorityQueue.java)
         * [x] [Dictionary](src/datastructures_for_dictionaries/Dictionary.java) — implemented by:
-            * [x] [Binary search trees](src/datastructures_for_dictionaries/BinarySearchTree.java)
+            * [x] [Binary search tree](src/datastructures_for_dictionaries/BinarySearchTree.java)
                 * [ ] AVL tree
 * Graph algorithms
     * Graph
