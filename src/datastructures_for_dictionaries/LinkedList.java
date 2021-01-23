@@ -1,13 +1,42 @@
 package datastructures_for_dictionaries;
 
+import java.util.NoSuchElementException;
+
 // See also: java.util.LinkedList
-public class LinkedList<E> {
+public class LinkedList<E> implements Iterable<E> {
 
     /* TODO: Add tests */
 
     protected ListNode<E> first;
     protected ListNode<E> last;
     protected int size;
+
+    public E get(int i) {
+        return getNode(i).value;
+    }
+
+    public void set(int i, E value) {
+        getNode(i).value = value;
+    }
+
+    private ListNode<E> getNode(int i) {
+        if (i < 0 || i >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        ListNode<E> node;
+        if (i <= size / 2) {
+            node = first;
+            for (int j = 0; j < i; ++j) {
+                node = node.next;
+            }
+        } else {
+            node = last;
+            for (int j = size - 1; j > i; --j) {
+                node = node.prev;
+            }
+        }
+        return node;
+    }
 
     public void addFirst(E e) {
         ListNode<E> newFirst = new ListNode<>(e);
@@ -63,6 +92,10 @@ public class LinkedList<E> {
         return retValue;
     }
 
+    public int size() {
+        return size;
+    }
+
     public boolean isEmpty() {
         return size == 0;
     }
@@ -73,44 +106,31 @@ public class LinkedList<E> {
         size = 0;
     }
 
-    E get(int i) {
-        return getNode(i).value;
+    public boolean contains(Object o) {
+        return indexOf(o) != -1;
     }
 
-    void set(int i, E value) {
-        getNode(i).value = value;
-    }
-
-    private ListNode<E> getNode(int i) {
-        if (i < 0 || i >= size) {
-            throw new IndexOutOfBoundsException();
-        }
-        ListNode<E> node;
-        if (i <= size / 2) {
-            node = first;
-            for (int j = 0; j < i; ++j) {
-                node = node.next;
+    public int indexOf(Object o) {
+        int i = 0;
+        for (E e : this) {
+            if (o.equals(e)) {
+                return i;
             }
-        } else {
-            node = last;
-            for (int j = size - 1; j > i; --j) {
-                node = node.prev;
-            }
+            ++i;
         }
-        return node;
+        return -1;
     }
 
-    java.util.Iterator<E> iterator() {
+    public java.util.Iterator<E> iterator() {
         return new Iterator();
     }
 
     @Override
     public String toString() {
         StringBuilder repr = new StringBuilder();
-        java.util.Iterator<E> it = iterator();
-        while (it.hasNext()) {
-            repr.append(it.next());
-            if (it.hasNext()) {
+        for (java.util.Iterator<E> i = iterator(); i.hasNext(); ) {
+            repr.append(i.next());
+            if (i.hasNext()) {
                 repr.append(", ");
             }
         }
@@ -149,13 +169,13 @@ public class LinkedList<E> {
         @Override
         public E next() {
             if (isEmpty()) {
-                throw new java.util.NoSuchElementException();
+                throw new NoSuchElementException();
             }
             if (current == null) {
                 current = first;
             } else {
                 if (current.next == null) {
-                    throw new java.util.NoSuchElementException();
+                    throw new NoSuchElementException();
                 }
                 current = current.next;
             }
