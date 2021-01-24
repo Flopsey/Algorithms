@@ -14,12 +14,17 @@ public class AdjacencyListUnweighted extends GraphUnweighted {
         }
     }
 
+    @SuppressWarnings("DuplicatedCode")
     public static void main(String[] args) {
         // Examples:
 
         // Undirected
         GraphUnweighted graph = new AdjacencyListUnweighted(4, false);
-        constructExampleGraph1(graph);
+        graph.addEdge(0, 1);
+        graph.addEdge(1, 2);
+        graph.addEdge(2, 3);
+        graph.addEdge(3, 1);
+        graph.addEdge(3, 0);
         System.out.println(graph.containsEdge(1, 3));  // true
         System.out.println(graph.outEdges(3).size());  // 3
         System.out.println(graph.getVertexCount());  // 4
@@ -27,7 +32,11 @@ public class AdjacencyListUnweighted extends GraphUnweighted {
 
         // Directed
         GraphUnweighted digraph = new AdjacencyListUnweighted(4, true);
-        constructExampleGraph1(digraph);
+        graph.addEdge(0, 1);
+        graph.addEdge(1, 2);
+        graph.addEdge(2, 3);
+        graph.addEdge(3, 1);
+        graph.addEdge(3, 0);
         System.out.println(digraph.containsEdge(1, 3));  // false
         System.out.println(digraph.outEdges(3).size());  // 2
         System.out.println(digraph.getVertexCount());  // 4
