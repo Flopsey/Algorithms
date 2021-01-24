@@ -2,8 +2,8 @@ package graph_algorithms;
 
 public abstract class GraphWeighted extends Graph {
 
-    public GraphWeighted(boolean directed) {
-        super(directed);
+    public GraphWeighted(int n, boolean directed) {
+        super(n, directed);
     }
 
     protected static void constructExampleGraph(GraphWeighted graph) {
@@ -19,6 +19,7 @@ public abstract class GraphWeighted extends Graph {
         if (!directed) {
             _addEdge(to, from, cost);
         }
+        edgeCount++;
     }
 
     protected abstract void _addEdge(int from, int to, double cost);

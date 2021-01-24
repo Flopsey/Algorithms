@@ -7,7 +7,7 @@ public class AdjacencyListUnweighted extends GraphUnweighted {
     public LinkedList<LinkedList<Integer>> adjacencyList;
 
     public AdjacencyListUnweighted(int n, boolean directed) {
-        super(directed);
+        super(n, directed);
         adjacencyList = new LinkedList<>();
         for (int i = 0; i < n; ++i) {
             adjacencyList.addLast(new LinkedList<>());
@@ -22,12 +22,16 @@ public class AdjacencyListUnweighted extends GraphUnweighted {
         constructExampleGraph(graph);
         System.out.println(graph.containsEdge(1, 3));  // true
         System.out.println(graph.outEdges(3).size());  // 3
+        System.out.println(graph.getVertexCount());  // 4
+        System.out.println(graph.getEdgeCount());  // 5
 
         // Directed
         GraphUnweighted digraph = new AdjacencyListUnweighted(4, true);
         constructExampleGraph(digraph);
         System.out.println(digraph.containsEdge(1, 3));  // false
         System.out.println(digraph.outEdges(3).size());  // 2
+        System.out.println(digraph.getVertexCount());  // 4
+        System.out.println(digraph.getEdgeCount());  // 5
     }
 
     @Override

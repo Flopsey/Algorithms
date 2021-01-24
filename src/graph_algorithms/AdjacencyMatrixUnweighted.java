@@ -7,7 +7,7 @@ public class AdjacencyMatrixUnweighted extends GraphUnweighted {
     public boolean[][] adjacencyMatrix;
 
     public AdjacencyMatrixUnweighted(int n, boolean directed) {
-        super(directed);
+        super(n, directed);
         adjacencyMatrix = new boolean[n][n];
     }
 
@@ -19,12 +19,16 @@ public class AdjacencyMatrixUnweighted extends GraphUnweighted {
         constructExampleGraph(graph);
         System.out.println(graph.containsEdge(1, 3));  // true
         System.out.println(graph.outEdges(3).size());  // 3
+        System.out.println(graph.getVertexCount());  // 4
+        System.out.println(graph.getEdgeCount());  // 5
 
         // Directed
         GraphUnweighted digraph = new AdjacencyMatrixUnweighted(4, true);
         constructExampleGraph(digraph);
         System.out.println(digraph.containsEdge(1, 3));  // false
         System.out.println(digraph.outEdges(3).size());  // 2
+        System.out.println(digraph.getVertexCount());  // 4
+        System.out.println(digraph.getEdgeCount());  // 5
     }
 
     @Override

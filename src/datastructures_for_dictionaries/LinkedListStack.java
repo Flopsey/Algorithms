@@ -14,6 +14,9 @@ public class LinkedListStack<E> extends LinkedList<E> implements Stack<E> {
 
     @Override
     public E top() {
+        if (first == null) {
+            return null;
+        }
         return first.value;
     }
 

@@ -7,7 +7,7 @@ public class AdjacencyMatrixWeighted extends GraphWeighted {
     public double[][] adjacencyMatrix;
 
     public AdjacencyMatrixWeighted(int n, boolean directed) {
-        super(directed);
+        super(n, directed);
         adjacencyMatrix = new double[n][n];
         for (int from = 0; from < adjacencyMatrix.length; ++from) {
             for (int to = 0; to < adjacencyMatrix[from].length; ++to) {
@@ -24,12 +24,16 @@ public class AdjacencyMatrixWeighted extends GraphWeighted {
         constructExampleGraph(graph);
         System.out.println(graph.containsEdge(1, 3));  // true
         System.out.println(graph.outEdges(3).size());  // 3
+        System.out.println(graph.getVertexCount());  // 4
+        System.out.println(graph.getEdgeCount());  // 5
 
         // Directed
         GraphWeighted digraph = new AdjacencyMatrixWeighted(4, true);
         constructExampleGraph(digraph);
         System.out.println(digraph.containsEdge(1, 3));  // false
         System.out.println(digraph.outEdges(3).size());  // 2
+        System.out.println(digraph.getVertexCount());  // 4
+        System.out.println(digraph.getEdgeCount());  // 5
     }
 
     @Override

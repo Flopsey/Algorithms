@@ -2,8 +2,8 @@ package graph_algorithms;
 
 public abstract class GraphUnweighted extends Graph {
 
-    public GraphUnweighted(boolean directed) {
-        super(directed);
+    public GraphUnweighted(int n, boolean directed) {
+        super(n, directed);
     }
 
     protected static void constructExampleGraph(GraphUnweighted graph) {
@@ -19,6 +19,7 @@ public abstract class GraphUnweighted extends Graph {
         if (!directed) {
             _addEdge(to, from);
         }
+        ++edgeCount;
     }
 
     protected abstract void _addEdge(int from, int to);

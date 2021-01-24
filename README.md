@@ -3,8 +3,10 @@ Collection of various algorithms and data structures implemented in Java. The co
 ["Algorithms and Data Structures" at ETH Zürich](http://www.vorlesungsverzeichnis.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=139780&semkez=2020W&ansicht=KATALOGDATEN&lang=en)
 and [this script](https://www.cadmo.ethz.ch/education/lectures/HS16/DA/skript/skript.pdf) [access restricted].
 
-## To-do list [61% complete]
+## To-do list [60% complete]
 * [x] [Karatsuba](src/Karatsuba.java)
+* [ ] Pasture break
+* [ ] Find the star
 * [x] [Maximum subarray sum](src/MaximumSubarraySum.java)
 * Sorting and search algorithms
     * Search
@@ -51,9 +53,7 @@ and [this script](https://www.cadmo.ethz.ch/education/lectures/HS16/DA/skript/sk
     * [x] [Graph](src/graph_algorithms/Graph.java) ([weighted](src/graph_algorithms/GraphWeighted.java)/[unweighted](src/graph_algorithms/GraphUnweighted.java))
         * [x] Adjacency matrix ([weighted](src/graph_algorithms/AdjacencyMatrixWeighted.java)/[unweighted](src/graph_algorithms/AdjacencyMatrixUnweighted.java))
         * [x] Adjacency list ([weighted](src/graph_algorithms/AdjacencyListWeighted.java)/[unweighted](src/graph_algorithms/AdjacencyListUnweighted.java))
-    * [ ] Depth-first search
-        * Recursive
-        * Iterative
+    * [x] [Depth-first search](src/graph_algorithms/DepthFirstSearch.java)
     * [ ] Breadth-first search
     * [ ] Topological sort
     * Shortest Paths
