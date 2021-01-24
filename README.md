@@ -3,7 +3,7 @@ Collection of various algorithms and data structures implemented in Java. The co
 ["Algorithms and Data Structures" at ETH Zürich](http://www.vorlesungsverzeichnis.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=139780&semkez=2020W&ansicht=KATALOGDATEN&lang=en)
 and [this script](https://www.cadmo.ethz.ch/education/lectures/HS16/DA/skript/skript.pdf) [access restricted].
 
-## To-do list [60% complete]
+## To-do list [63% complete]
 * [x] [Karatsuba](src/Karatsuba.java)
 * [ ] Pasture break
 * [ ] Find the star
@@ -54,7 +54,7 @@ and [this script](https://www.cadmo.ethz.ch/education/lectures/HS16/DA/skript/sk
         * [x] Adjacency matrix ([weighted](src/graph_algorithms/AdjacencyMatrixWeighted.java)/[unweighted](src/graph_algorithms/AdjacencyMatrixUnweighted.java))
         * [x] Adjacency list ([weighted](src/graph_algorithms/AdjacencyListWeighted.java)/[unweighted](src/graph_algorithms/AdjacencyListUnweighted.java))
     * [x] [Depth-first search](src/graph_algorithms/DepthFirstSearch.java)
-    * [ ] Breadth-first search
+    * [x] [Breadth-first search](src/graph_algorithms/BreadthFirstSearch.java)
     * [ ] Topological sort
     * Shortest Paths
         * [ ] BFS shortest path

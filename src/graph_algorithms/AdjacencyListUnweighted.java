@@ -19,7 +19,7 @@ public class AdjacencyListUnweighted extends GraphUnweighted {
 
         // Undirected
         GraphUnweighted graph = new AdjacencyListUnweighted(4, false);
-        constructExampleGraph(graph);
+        constructExampleGraph1(graph);
         System.out.println(graph.containsEdge(1, 3));  // true
         System.out.println(graph.outEdges(3).size());  // 3
         System.out.println(graph.getVertexCount());  // 4
@@ -27,7 +27,7 @@ public class AdjacencyListUnweighted extends GraphUnweighted {
 
         // Directed
         GraphUnweighted digraph = new AdjacencyListUnweighted(4, true);
-        constructExampleGraph(digraph);
+        constructExampleGraph1(digraph);
         System.out.println(digraph.containsEdge(1, 3));  // false
         System.out.println(digraph.outEdges(3).size());  // 2
         System.out.println(digraph.getVertexCount());  // 4

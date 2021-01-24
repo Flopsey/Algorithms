@@ -10,4 +10,11 @@ public class LinkedListQueue<E> extends LinkedList<E> implements Queue<E> {
         return removeFirst();
     }
 
+    public E front() {
+        if (first == null) {
+            return null;
+        }
+        return first.value;
+    }
+
 }
