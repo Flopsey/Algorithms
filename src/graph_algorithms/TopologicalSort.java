@@ -1,6 +1,8 @@
 package graph_algorithms;
 
-import datastructures_for_dictionaries.*;
+import datastructures_for_dictionaries.LinkedList;
+import datastructures_for_dictionaries.LinkedListStack;
+import datastructures_for_dictionaries.Stack;
 
 public class TopologicalSort {
 
@@ -14,7 +16,7 @@ public class TopologicalSort {
         graph.addEdge(4, 5);
         graph.addEdge(5, 4);
         graph.addEdge(5, 6);
-        System.out.println(topologicalSort(graph));
+        System.out.println(topologicalSort(graph));  // [4, 5, 6, 3, 0, 1, 2]
     }
 
     public static LinkedList<Integer> topologicalSort(GraphUnweighted graph) {
