@@ -1,6 +1,8 @@
 package graph_algorithms;
 
-import datastructures_for_dictionaries.*;
+import datastructures_for_dictionaries.LinkedList;
+import datastructures_for_dictionaries.LinkedListStack;
+import datastructures_for_dictionaries.Stack;
 
 public class TopologicalSort {
 
@@ -14,15 +16,14 @@ public class TopologicalSort {
         graph.addEdge(4, 5);
         graph.addEdge(5, 4);
         graph.addEdge(5, 6);
-        System.out.println(topologicalSort(graph));
+        System.out.println(topologicalSort(graph));  // [4, 5, 6, 3, 0, 1, 2]
     }
 
     public static LinkedList<Integer> topologicalSort(GraphUnweighted graph) {
         Stack<Integer> stack = new LinkedListStack<>();
         LinkedList<Integer> visited = new LinkedList<>();  // TODO: Use Dictionary once AVLTree is finished
+        LinkedList<Integer> topo = new LinkedList<>();
         int vertexCount = graph.getVertexCount();
-        Heap<PriorityQueue.KeyValuePair<Integer>> post = new Heap<>();
-        int t = 0;
         for (int s = 0; s < vertexCount; ++s) {
             if (visited.contains(s)) {
                 continue;
@@ -32,11 +33,7 @@ public class TopologicalSort {
                 int u = stack.top();
                 if (visited.contains(u)) {
                     stack.pop();
-                    if (post.contains(u)) {
-                        post.decreaseKey(u, t--);
-                    } else {
-                        post.insert(new PriorityQueue.KeyValuePair<>(u, t++));
-                    }
+                    topo.addFirst(u);
                 } else {
                     visited.addLast(u);
                     LinkedList<Integer> out = graph.outEdges(u);
@@ -48,10 +45,6 @@ public class TopologicalSort {
                     }
                 }
             }
-        }
-        LinkedList<Integer> topo = new LinkedList<>();
-        while (post.getMin() != null) {
-            topo.addFirst(post.extractMin().value);
         }
         return topo;
     }
