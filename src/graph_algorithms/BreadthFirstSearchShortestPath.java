@@ -40,8 +40,7 @@ public class BreadthFirstSearchShortestPath extends ShortestPath {
         outer:
         while (queue.front() != null) {
             int u = queue.dequeue();
-            LinkedList<Integer> out = graph.outEdges(u);
-            for (int v : out) {
+            for (int v : graph.outEdges(u)) {
                 if (distance[v] != Integer.MAX_VALUE) {
                     continue;
                 }
@@ -54,7 +53,7 @@ public class BreadthFirstSearchShortestPath extends ShortestPath {
             }
         }
 
-        return shortestPathBacktrack(predecessor, from, to);
+        return backtrack(predecessor, from, to);
     }
 
 }

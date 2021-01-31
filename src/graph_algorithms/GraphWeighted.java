@@ -27,3 +27,6 @@ public abstract class GraphWeighted extends Graph {
     public abstract double cost(int from, int to);
 
 }
+
+class NegativeCycleException extends IllegalArgumentException {
+}

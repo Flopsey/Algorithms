@@ -3,7 +3,7 @@ package graph_algorithms;
 import datastructures_for_dictionaries.LinkedList;
 
 class ShortestPath {
-    static LinkedList<Integer> shortestPathBacktrack(int[] predecessor, int from, int to) {
+    static LinkedList<Integer> backtrack(int[] predecessor, int from, int to) {
         LinkedList<Integer> shortestPath = new LinkedList<>();
         int v = to;
         while (v != from) {

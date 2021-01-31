@@ -38,8 +38,7 @@ public class BreadthFirstSearch {
                 int u = queue.dequeue();
                 if (!visited.contains(u)) {
                     visited.addLast(u);
-                    LinkedList<Integer> out = graph.outEdges(u);
-                    for (int v : out) {
+                    for (int v : graph.outEdges(u)) {
                         if (visited.contains(v)) {
                             continue;
                         }

@@ -36,15 +36,14 @@ public class Dijkstra extends ShortestPath {
         distance[from] = 0;
         LinkedList<Integer> visited = new LinkedList<>();  // TODO: Use Dictionary once AVLTree is finished
         KeyedPriorityQueue<Integer> prioQueue = new KeyedHeap<>();
-        for (int i = 0; i < graph.vertexCount; ++i) {
+        for (int i = 0; i < graph.getVertexCount(); ++i) {
             prioQueue.insert(i, distance[i]);
         }
 
         while (visited.size() != vertexCount) {
             int u = prioQueue.extractMin();
             visited.addLast(u);
-            LinkedList<Integer> out = graph.outEdges(u);
-            for (int v : out) {
+            for (int v : graph.outEdges(u)) {
                 if (visited.contains(v)) {
                     continue;
                 }
@@ -58,7 +57,7 @@ public class Dijkstra extends ShortestPath {
             }
         }
 
-        return shortestPathBacktrack(predecessor, from, to);
+        return backtrack(predecessor, from, to);
     }
 
 }

@@ -36,8 +36,7 @@ public class TopologicalSort {
                     topo.addFirst(u);
                 } else {
                     visited.addLast(u);
-                    LinkedList<Integer> out = graph.outEdges(u);
-                    for (int v : out) {
+                    for (int v : graph.outEdges(u)) {
                         if (visited.contains(v)) {
                             continue;
                         }
