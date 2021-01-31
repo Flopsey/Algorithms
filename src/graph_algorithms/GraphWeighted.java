@@ -24,4 +24,6 @@ public abstract class GraphWeighted extends Graph {
 
     protected abstract void _addEdge(int from, int to, double cost);
 
+    public abstract double cost(int from, int to);
+
 }

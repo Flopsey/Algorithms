@@ -1,19 +1,11 @@
 package datastructures_for_dictionaries;
 
-import java.util.Comparator;
+public class Heap<E extends Comparable<? super E>> implements PriorityQueue<E> {
 
-public class Heap<E> implements PriorityQueue<E> {
-
-    private final LinkedList<E> heap;
-    private final Comparator<? super E> comparator;
+    final LinkedList<E> heap;
 
     public Heap() {
-        this(null);
-    }
-
-    public Heap(Comparator<? super E> comparator) {
         this.heap = new LinkedList<>();
-        this.comparator = comparator;
     }
 
     public static void main(String[] args) {
@@ -31,12 +23,20 @@ public class Heap<E> implements PriorityQueue<E> {
         System.out.println(prioQueue.extractMin());  // null
     }
 
+    static int left(int index) {
+        return 2 * index + 1;
+    }
+
+    static int right(int index) {
+        return 2 * index + 2;
+    }
+
+    static int parent(int index) {
+        return (index - 1) / 2;
+    }
+
     @Override
     public void insert(E e) {
-        if (comparator == null && !(e instanceof Comparable)) {
-            throw new IllegalArgumentException("Entry " + e + " is not comparable");
-        }
-
         heap.addFirst(e);
         restoreHeapCondition(0);
     }
@@ -56,27 +56,13 @@ public class Heap<E> implements PriorityQueue<E> {
         return heap.get(0);
     }
 
-    @Override
-    public <V extends Comparable<V>> void decreaseKey(V value, int key) {
-        int index = heap.indexOf(value);
-        if (index < 0) {
-            throw new IllegalArgumentException("Entry not found in heap");
-        }
-        KeyValuePair<V> entry = (KeyValuePair<V>) heap.get(index);
-        if (entry.key > key) {
-            throw new IllegalArgumentException("New key is greater than previous");
-        }
-        entry.key = key;
-        restoreHeapCondition(index);
-    }
-
     public boolean contains(Object o) {
         return heap.contains(o);
     }
 
-    private void restoreHeapCondition(int i) {
-        while (2 * (i + 1) - 1 < heap.size) {
-            int j = 2 * (i + 1) - 1;
+    void restoreHeapCondition(int i) {
+        while (left(i) < heap.size) {
+            int j = left(i);
             if (j + 1 < heap.size) {
                 if (compare(heap.get(j), heap.get(j + 1)) > 0) {
                     ++j;
@@ -94,11 +80,7 @@ public class Heap<E> implements PriorityQueue<E> {
     }
 
     private int compare(E e1, E e2) {
-        if (comparator == null) {
-            return ((Comparable<? super E>) e1).compareTo(e2);
-        } else {
-            return comparator.compare(e1, e2);
-        }
+        return e1.compareTo(e2);
     }
 
 }

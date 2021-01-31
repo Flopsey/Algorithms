@@ -56,4 +56,14 @@ public class AdjacencyListWeighted extends GraphWeighted {
         }
     }
 
+    @Override
+    public double cost(int from, int to) {
+        LinkedList<Integer> out = adjacencyList.get(from);
+        int index = out.indexOf(to);
+        if (index == -1) {
+            return Double.POSITIVE_INFINITY;
+        }
+        return weights.get(from).get(index);
+    }
+
 }

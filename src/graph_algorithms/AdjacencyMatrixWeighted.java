@@ -57,4 +57,9 @@ public class AdjacencyMatrixWeighted extends GraphWeighted {
         adjacencyMatrix[from][to] = cost;
     }
 
+    @Override
+    public double cost(int from, int to) {
+        return adjacencyMatrix[from][to];
+    }
+
 }

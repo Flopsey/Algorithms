@@ -4,7 +4,7 @@ import datastructures_for_dictionaries.LinkedList;
 import datastructures_for_dictionaries.LinkedListQueue;
 import datastructures_for_dictionaries.Queue;
 
-public class BreadthFirstSearchShortestPath {
+public class BreadthFirstSearchShortestPath extends ShortestPath {
 
     @SuppressWarnings("DuplicatedCode")
     public static void main(String[] args) {
@@ -54,14 +54,7 @@ public class BreadthFirstSearchShortestPath {
             }
         }
 
-        LinkedList<Integer> shortestPath = new LinkedList<>();
-        int v = to;
-        while (v != from) {
-            shortestPath.addFirst(v);
-            v = predecessor[v];
-        }
-        shortestPath.addFirst(from);
-        return shortestPath;
+        return shortestPathBacktrack(predecessor, from, to);
     }
 
 }
