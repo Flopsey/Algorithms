@@ -9,7 +9,7 @@ public class Dijkstra extends ShortestPath {
     @SuppressWarnings("DuplicatedCode")
     public static void main(String[] args) {
         // Example:
-        GraphWeighted graph = new AdjacencyMatrixWeighted(9, true);
+        GraphWeighted graph = new AdjacencyListWeighted(9, true);
         graph.addEdge(0, 1, 1);
         graph.addEdge(1, 3, 2);
         graph.addEdge(1, 4, 4);

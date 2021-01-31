@@ -9,7 +9,7 @@ public class BreadthFirstSearchShortestPath extends ShortestPath {
     @SuppressWarnings("DuplicatedCode")
     public static void main(String[] args) {
         // Example:
-        GraphUnweighted graph = new AdjacencyMatrixUnweighted(9, true);
+        GraphUnweighted graph = new AdjacencyListUnweighted(9, true);
         graph.addEdge(0, 1);
         graph.addEdge(1, 3);
         graph.addEdge(1, 4);
