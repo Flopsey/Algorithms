@@ -15,6 +15,7 @@ public class FloydWarshall extends ShortestPath {
         graph.addEdge(3, 5, 5);
         graph.addEdge(4, 5, 3);
         System.out.println(java.util.Arrays.deepToString(floydWarshall(graph)));  // TODO: Verify that the output is correct
+        System.out.println(java.util.Arrays.deepToString(transitiveClosure(graph)));  // TODO: Verify that the output is correct
     }
 
     public static double[][] floydWarshall(GraphWeighted graph) {
@@ -43,6 +44,29 @@ public class FloydWarshall extends ShortestPath {
         }
 
         return table[n - 1];  // TODO: Compute actual shortest paths, not just their lengths
+    }
+
+    public static boolean[][] transitiveClosure(GraphWeighted graph) {
+        int n = graph.getVertexCount();
+        boolean[][][] table = new boolean[n + 1][n][n];
+        for (int u = 0; u < n; ++u) {
+            table[0][u][u] = true;
+        }
+        for (int u = 0; u < n; ++u) {
+            for (int v = 0; v < n; ++v) {
+                table[0][u][v] = graph.outEdges(u).contains(v);
+            }
+        }
+
+        for (int i = 1; i < n; ++i) {
+            for (int u = 0; u < n; ++u) {
+                for (int v = 0; v < n; ++v) {
+                    table[i][u][v] = table[i - 1][u][v] || (table[i - 1][u][i] && table[i - 1][i][v]);
+                }
+            }
+        }
+
+        return table[n - 1];
     }
 
 }
