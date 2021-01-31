@@ -11,7 +11,11 @@ public class AdjacencyMatrixWeighted extends GraphWeighted {
         adjacencyMatrix = new double[n][n];
         for (int from = 0; from < adjacencyMatrix.length; ++from) {
             for (int to = 0; to < adjacencyMatrix[from].length; ++to) {
-                adjacencyMatrix[from][to] = Double.POSITIVE_INFINITY;
+                if (from == to) {
+                    adjacencyMatrix[from][to] = 0;
+                } else {
+                    adjacencyMatrix[from][to] = Double.POSITIVE_INFINITY;
+                }
             }
         }
     }

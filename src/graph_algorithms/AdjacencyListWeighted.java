@@ -14,6 +14,7 @@ public class AdjacencyListWeighted extends GraphWeighted {
         for (int i = 0; i < n; ++i) {
             adjacencyList.addLast(new LinkedList<>());
             weights.addLast(new LinkedList<>());
+            addEdge(i, i, 0);
         }
     }
 

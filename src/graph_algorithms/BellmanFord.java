@@ -4,6 +4,7 @@ import datastructures_for_dictionaries.LinkedList;
 
 public class BellmanFord extends ShortestPath {
 
+    @SuppressWarnings("DuplicatedCode")
     public static void main(String[] args) {
         // Example:
         GraphWeighted graph = new AdjacencyListWeighted(6, true);
