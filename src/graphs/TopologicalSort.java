@@ -21,7 +21,7 @@ public class TopologicalSort {
 
     public static LinkedList<Integer> topologicalSort(GraphUnweighted graph) {
         Stack<Integer> stack = new LinkedListStack<>();
-        LinkedList<Integer> visited = new LinkedList<>();  // TODO: Use data_structures.Dictionary once AVLTree is finished
+        LinkedList<Integer> visited = new LinkedList<>();  // TODO: Use Dictionary once AVLTree is finished
         LinkedList<Integer> topo = new LinkedList<>();
         int vertexCount = graph.getVertexCount();
         for (int s = 0; s < vertexCount; ++s) {

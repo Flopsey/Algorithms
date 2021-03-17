@@ -27,7 +27,7 @@ public class BreadthFirstSearch {
 
     public static void breadthFirstSearch(GraphUnweighted graph) {
         Queue<Integer> queue = new LinkedListQueue<>();
-        LinkedList<Integer> visited = new LinkedList<>();  // TODO: Use data_structures.Dictionary once AVLTree is finished
+        LinkedList<Integer> visited = new LinkedList<>();  // TODO: Use Dictionary once AVLTree is finished
         int vertexCount = graph.getVertexCount();
         for (int s = 0; s < vertexCount; ++s) {
             if (visited.contains(s)) {

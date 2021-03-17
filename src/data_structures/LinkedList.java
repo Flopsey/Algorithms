@@ -2,7 +2,7 @@ package data_structures;
 
 import java.util.NoSuchElementException;
 
-// See also: java.util.data_structures.LinkedList
+// See also: java.util.LinkedList
 public class LinkedList<E> implements Iterable<E> {
 
     /* TODO: Add tests */

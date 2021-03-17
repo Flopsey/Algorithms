@@ -25,7 +25,7 @@ public abstract class Graph {
 
     public abstract boolean containsEdge(int from, int to);
 
-    public abstract LinkedList<Integer> outEdges(int vertex);  // TODO: Use data_structures.Dictionary once AVLTree is finished
+    public abstract LinkedList<Integer> outEdges(int vertex);  // TODO: Use Dictionary once AVLTree is finished
 
     public void forEachEdge(BiConsumer<Integer, Integer> action) {
         if (directed) {
@@ -35,7 +35,7 @@ public abstract class Graph {
                 }
             }
         } else {
-            LinkedList<Integer> visited = new LinkedList<>();  // TODO: Use data_structures.Dictionary once AVLTree is finished
+            LinkedList<Integer> visited = new LinkedList<>();  // TODO: Use Dictionary once AVLTree is finished
             for (int u = 0; u < vertexCount; ++u) {
                 if (visited.contains(u)) {
                     continue;

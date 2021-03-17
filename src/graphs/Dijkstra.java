@@ -34,7 +34,7 @@ public class Dijkstra extends ShortestPath {
             distance[i] = Double.POSITIVE_INFINITY;
         }
         distance[from] = 0;
-        LinkedList<Integer> visited = new LinkedList<>();  // TODO: Use data_structures.Dictionary once AVLTree is finished
+        LinkedList<Integer> visited = new LinkedList<>();  // TODO: Use Dictionary once AVLTree is finished
         KeyedPriorityQueue<Integer> prioQueue = new KeyedHeap<>();
         for (int i = 0; i < graph.getVertexCount(); ++i) {
             prioQueue.insert(i, distance[i]);
