@@ -1,7 +1,7 @@
 package dynamic_programming;
 
-import datastructures_for_dictionaries.LinkedList;
-import search_sort.BinarySearch;
+import data_structures.LinkedList;
+import sorting_searching.BinarySearch;
 
 public class LongestIncreasingSubsequence {
 

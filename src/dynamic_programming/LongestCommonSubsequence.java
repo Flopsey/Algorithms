@@ -1,6 +1,6 @@
 package dynamic_programming;
 
-import datastructures_for_dictionaries.LinkedList;
+import data_structures.LinkedList;
 
 public class LongestCommonSubsequence {
 
