@@ -56,26 +56,34 @@ Zürich.
     * [Floyd-Warshall](src/graphs/FloydWarshall.java)
 
 ### Parallel Programming
-* [Thread spawning](src/parallel_programming/ThreadSpawnExample.java)
-* [Thread spawning and joining](src/parallel_programming/ThreadSpawnJoinExample.java)
-* [Executor service](src/parallel_programming/ExecutorServiceExample.java)
-* [Fork/Join](src/parallel_programming/ForkJoinExample.java)
-* [Peterson lock](src/parallel_programming/PetersonLock.java)
-* [Filter lock](src/parallel_programming/FilterLock.java)
-* [Bakery lock](src/parallel_programming/BakeryLock.java)
-* [Test-and-set lock](src/parallel_programming/TASLock.java)
-* [Test and test-and-set lock](src/parallel_programming/TATASLock.java)
-* [`synchronized`](src/parallel_programming/SynchronizedExample.java)
-* [Wait/notify](src/parallel_programming/WaitNotifyExample.java)
-* [Wait/notify with different conditions](src/parallel_programming/WaitNotifyConditionsExample.java)
-* [Non-reusable barrier](src/parallel_programming/SimpleBarrier.java)
-* [Reusable barrier](src/parallel_programming/CyclicBarrier.java)
-* [Coarse-grained locking](src/parallel_programming/CoarseGrainedLockingExample.java)
-* [Fine-grained locking](src/parallel_programming/FineGrainedLockingExample.java)
-* [Optimistic locking](src/parallel_programming/OptimisticLockingExample.java)
-* [Lazy locking](src/parallel_programming/LazyLockingExample.java)
-* [Consensus protocol](src/parallel_programming/ConsensusProtocol.java)
-* [Test-and-set consensus protocol](src/parallel_programming/TASConsensusProtocol.java)
+<!-- Structure loosely based on PVW script (https://cdn.vis.ethz.ch/luk/pvw_paralleleprogrammierung.pdf) -->
+* Threads
+  * [Thread spawning](src/parallel_programming/ThreadSpawnExample.java)
+  * [Thread spawning and joining](src/parallel_programming/ThreadSpawnJoinExample.java)
+* Parallelism
+  * [Executor service](src/parallel_programming/ExecutorServiceExample.java)
+  * [Fork/Join](src/parallel_programming/ForkJoinExample.java)
+* Concurrency
+  * Mutual exclusion
+    * [Peterson lock](src/parallel_programming/PetersonLock.java)
+    * [Filter lock](src/parallel_programming/FilterLock.java)
+    * [Bakery lock](src/parallel_programming/BakeryLock.java)
+    * [Test-and-set lock](src/parallel_programming/TASLock.java)
+    * [Test and test-and-set lock](src/parallel_programming/TATASLock.java)
+* Synchronization
+  * [`synchronized`](src/parallel_programming/SynchronizedExample.java)
+  * [Wait/notify](src/parallel_programming/WaitNotifyExample.java)
+  * [Wait/notify with different conditions](src/parallel_programming/WaitNotifyConditionsExample.java)
+  * [Non-reusable barrier](src/parallel_programming/SimpleBarrier.java)
+  * [Reusable barrier](src/parallel_programming/CyclicBarrier.java)
+* Lock granularity
+  * [Coarse-grained locking](src/parallel_programming/CoarseGrainedLockingExample.java)
+  * [Fine-grained locking](src/parallel_programming/FineGrainedLockingExample.java)
+  * [Optimistic locking](src/parallel_programming/OptimisticLockingExample.java)
+  * [Lazy locking](src/parallel_programming/LazyLockingExample.java)
+* Consensus
+  * [Consensus protocol](src/parallel_programming/ConsensusProtocol.java)
+  * [Test-and-set consensus protocol](src/parallel_programming/TASConsensusProtocol.java)
 * [Software transactional memory (using scala-stm)](src/parallel_programming/STMExample.java)
 * [Message passing interface](src/parallel_programming/MPIExample.java)
 
