@@ -63,6 +63,7 @@ Zürich.
 * [Peterson lock](src/parallel_programming/PetersonLock.java)
 * [Filter lock](src/parallel_programming/FilterLock.java)
 * [Bakery lock](src/parallel_programming/BakeryLock.java)
+* [Test-and-set lock](src/parallel_programming/TASLock.java)
 
 ### Miscellaneous
 * [Karatsuba](src/miscellaneous/Karatsuba.java)
