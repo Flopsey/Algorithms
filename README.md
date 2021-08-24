@@ -60,7 +60,8 @@ Zürich.
 * [Thread spawning and joining](src/parallel_programming/ThreadSpawnJoinExample.java)
 * [Executor service](src/parallel_programming/ExecutorServiceExample.java)
 * [Fork/Join](src/parallel_programming/ForkJoinExample.java)
-* [Peterson Lock](src/parallel_programming/PetersonLock.java)
+* [Peterson lock](src/parallel_programming/PetersonLock.java)
+* [Filter lock](src/parallel_programming/FilterLock.java)
 
 ### Miscellaneous
 * [Karatsuba](src/miscellaneous/Karatsuba.java)
