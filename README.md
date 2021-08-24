@@ -75,6 +75,7 @@ Zürich.
 * [Optimistic locking](src/parallel_programming/OptimisticLockingExample.java)
 * [Lazy locking](src/parallel_programming/LazyLockingExample.java)
 * [Consensus protocol](src/parallel_programming/ConsensusProtocol.java)
+* [Test-and-set consensus protocol](src/parallel_programming/TASConsensusProtocol.java)
 
 ### Miscellaneous
 * [Karatsuba](src/miscellaneous/Karatsuba.java)

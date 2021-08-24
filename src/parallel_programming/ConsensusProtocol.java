@@ -5,7 +5,7 @@ package parallel_programming;
 
 public abstract class ConsensusProtocol<T> {
 
-    int n;
+    private int n;
     protected T[] proposed = (T[]) new Object[n];
 
     // Announce my input value to the other threads
