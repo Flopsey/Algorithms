@@ -70,6 +70,7 @@ Zürich.
 * [Wait/notify with different conditions](src/parallel_programming/WaitNotifyConditionsExample.java)
 * [Non-reusable barrier](src/parallel_programming/SimpleBarrier.java)
 * [Reusable barrier](src/parallel_programming/CyclicBarrier.java)
+* [Coarse-grained locking](src/parallel_programming/CoarseGrainedLockingExample.java)
 
 ### Miscellaneous
 * [Karatsuba](src/miscellaneous/Karatsuba.java)
