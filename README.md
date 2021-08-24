@@ -62,6 +62,7 @@ Zürich.
 * [Fork/Join](src/parallel_programming/ForkJoinExample.java)
 * [Peterson lock](src/parallel_programming/PetersonLock.java)
 * [Filter lock](src/parallel_programming/FilterLock.java)
+* [Bakery lock](src/parallel_programming/BakeryLock.java)
 
 ### Miscellaneous
 * [Karatsuba](src/miscellaneous/Karatsuba.java)
