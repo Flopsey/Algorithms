@@ -1,3 +1,6 @@
+// Based on Parallel Programming PVW Script
+// https://cdn.vis.ethz.ch/luk/pvw_paralleleprogrammierung.pdf
+
 package parallel_programming;
 
 public class ThreadSpawnJoinExample {
