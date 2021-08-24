@@ -57,6 +57,7 @@ Zürich.
 
 ### Parallel Programming
 * [Thread spawning](src/parallel_programming/ThreadSpawnExample.java)
+* [Thread spawning and joining](src/parallel_programming/ThreadSpawnJoinExample.java)
 
 ### Miscellaneous
 * [Karatsuba](src/miscellaneous/Karatsuba.java)
