@@ -1,9 +1,6 @@
 package parallel_programming;
 
-public class WaitNotifyExample {
-}
-
-class Bathroom extends Thread {
+public class WaitNotifyExample extends Thread {
 
     private volatile static int men = 0;
     private volatile static int women = 0;
