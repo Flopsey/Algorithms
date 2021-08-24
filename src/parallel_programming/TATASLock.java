@@ -12,7 +12,7 @@ public class TATASLock {
     @SuppressWarnings("StatementWithEmptyBody")
     public void lock() {
         do {
-            while (state.get()) { }
+            while (state.get());
         } while (!state.compareAndSet(false, true));
     }
 

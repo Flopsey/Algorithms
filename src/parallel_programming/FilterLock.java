@@ -32,7 +32,7 @@ public class FilterLock {
         for (int i = 1; i < n; ++i) {
             level[id] = i;
             victim[i] = id;
-            while (others(id, i) && victim[i] == id) { }
+            while (others(id, i) && victim[i] == id);
         }
     }
 

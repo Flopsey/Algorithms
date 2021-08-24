@@ -12,7 +12,7 @@ public class PetersonLock {
     public void lock(int id) {
         flag[id] = true;
         victim = id;
-        while (flag[1 - id] && victim == id) { }
+        while (flag[1 - id] && victim == id);
     }
 
     public void unlock(int id) {

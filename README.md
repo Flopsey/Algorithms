@@ -65,6 +65,7 @@ Zürich.
 * [Bakery lock](src/parallel_programming/BakeryLock.java)
 * [Test-and-set lock](src/parallel_programming/TASLock.java)
 * [Test and test-and-set lock](src/parallel_programming/TATASLock.java)
+* [`synchronized`](src/parallel_programming/SynchronizedExample.java)
 
 ### Miscellaneous
 * [Karatsuba](src/miscellaneous/Karatsuba.java)

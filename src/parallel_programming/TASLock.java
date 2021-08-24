@@ -11,7 +11,7 @@ public class TASLock {
 
     @SuppressWarnings("StatementWithEmptyBody")
     public void lock() {
-        while (state.getAndSet(true)) { }
+        while (state.getAndSet(true));
     }
 
     public void unlock() {

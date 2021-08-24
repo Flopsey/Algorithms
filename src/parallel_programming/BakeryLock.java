@@ -39,7 +39,7 @@ public class BakeryLock {
         ++label[id];
 
         // Waiting section
-        while (conflict(id)) { }
+        while (conflict(id));
     }
 
     public void unlock(int id) {
