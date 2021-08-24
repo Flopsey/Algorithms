@@ -3,7 +3,10 @@
 
 package parallel_programming;
 
-public class FineGrainedLockingExample<T> extends SortedLinkedList<T> {
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public abstract class FineGrainedLockingExample<T> extends SortedLinkedList<T> {
 
     private final Node head;
 
@@ -43,5 +46,28 @@ public class FineGrainedLockingExample<T> extends SortedLinkedList<T> {
     }
 
     // ...
+
+    class Node extends SortedLinkedList<T>.Node {
+
+        Node next;
+        Lock lock = new ReentrantLock();
+
+        Node(int key) {
+            super(key);
+        }
+
+        Node(T item) {
+            super(item);
+        }
+
+        void lock() {
+            lock.lock();
+        }
+
+        void unlock() {
+            lock.unlock();
+        }
+
+    }
 
 }

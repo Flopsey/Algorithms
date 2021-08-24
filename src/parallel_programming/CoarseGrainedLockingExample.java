@@ -6,7 +6,7 @@ package parallel_programming;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class CoarseGrainedLockingExample<T> extends SortedLinkedList<T> {
+public abstract class CoarseGrainedLockingExample<T> extends SortedLinkedList<T> {
 
     private final Node head;
     private final Lock lock = new ReentrantLock();

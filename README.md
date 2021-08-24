@@ -73,6 +73,7 @@ Zürich.
 * [Coarse-grained locking](src/parallel_programming/CoarseGrainedLockingExample.java)
 * [Fine-grained locking](src/parallel_programming/FineGrainedLockingExample.java)
 * [Optimistic locking](src/parallel_programming/OptimisticLockingExample.java)
+* [Lazy locking](src/parallel_programming/LazyLockingExample.java)
 
 ### Miscellaneous
 * [Karatsuba](src/miscellaneous/Karatsuba.java)

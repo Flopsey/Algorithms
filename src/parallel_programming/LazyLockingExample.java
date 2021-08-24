@@ -1,10 +1,10 @@
 package parallel_programming;
 
-public abstract class OptimisticLockingExample<T> extends FineGrainedLockingExample<T> {
+public abstract class LazyLockingExample<T> extends OptimisticLockingExample<T> {
 
     private final Node head;
 
-    public OptimisticLockingExample() {
+    public LazyLockingExample() {
         head = new Node(Integer.MIN_VALUE);
         head.next = new Node(Integer.MAX_VALUE);
     }
@@ -25,6 +25,9 @@ public abstract class OptimisticLockingExample<T> extends FineGrainedLockingExam
             try {
                 if (validate(pred, curr)) {
                     if (key == curr.key) {
+                        // logically remove
+                        curr.marked = true;
+                        // physically remove
                         pred.next = curr.next;
                         return true;
                     } else {
@@ -38,22 +41,24 @@ public abstract class OptimisticLockingExample<T> extends FineGrainedLockingExam
         }
     }
 
-    // ...
-
-    boolean validate(Node pred, Node curr) {
-        Node node = head;
-        while (node.key <= pred.key) {
-            if (node == pred) {
-                return pred.next == curr;
-            }
-            node = node.next;
+    public boolean contains(T item) {
+        int key = item.hashCode();
+        Node curr = head;
+        while (curr.key < key) {
+            curr = curr.next;
         }
-        return false;
+        return curr.key == key && !curr.marked;
     }
 
-    class Node extends FineGrainedLockingExample<T>.Node {
+    boolean validate(Node pred, Node curr) {
+        // Both reachable and local state as expected
+        return !pred.marked && !curr.marked && pred.next == curr.next;
+    }
+
+    class Node extends OptimisticLockingExample<T>.Node {
 
         Node next;
+        boolean marked;
 
         Node(int key) {
             super(key);
@@ -61,6 +66,7 @@ public abstract class OptimisticLockingExample<T> extends FineGrainedLockingExam
 
         Node(T item) {
             super(item);
+            marked = false;
         }
 
     }
