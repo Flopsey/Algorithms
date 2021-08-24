@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="scala-stm" level="project" />
+    <orderEntry type="library" name="mpjexpress" level="project" />
   </component>
 </module>

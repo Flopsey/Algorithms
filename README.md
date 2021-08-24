@@ -77,6 +77,7 @@ Zürich.
 * [Consensus protocol](src/parallel_programming/ConsensusProtocol.java)
 * [Test-and-set consensus protocol](src/parallel_programming/TASConsensusProtocol.java)
 * [Software transactional memory (using scala-stm)](src/parallel_programming/STMExample.java)
+* [Message passing interface](src/parallel_programming/MPIExample.java)
 
 ### Miscellaneous
 * [Karatsuba](src/miscellaneous/Karatsuba.java)
