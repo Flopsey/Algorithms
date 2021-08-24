@@ -55,5 +55,8 @@ Zürich.
     * [Bellman-Ford](src/graphs/BellmanFord.java)
     * [Floyd-Warshall](src/graphs/FloydWarshall.java)
 
+### Parallel Programming
+* [Thread spawning](src/parallel_programming/ThreadSpawnExample.java)
+
 ### Miscellaneous
 * [Karatsuba](src/miscellaneous/Karatsuba.java)
