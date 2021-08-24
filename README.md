@@ -72,6 +72,7 @@ Zürich.
 * [Reusable barrier](src/parallel_programming/CyclicBarrier.java)
 * [Coarse-grained locking](src/parallel_programming/CoarseGrainedLockingExample.java)
 * [Fine-grained locking](src/parallel_programming/FineGrainedLockingExample.java)
+* [Optimistic locking](src/parallel_programming/OptimisticLockingExample.java)
 
 ### Miscellaneous
 * [Karatsuba](src/miscellaneous/Karatsuba.java)
