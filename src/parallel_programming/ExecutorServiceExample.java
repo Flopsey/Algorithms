@@ -18,9 +18,7 @@ public class ExecutorServiceExample {
         Future<Integer> max = ex.submit(top);
         try {
             System.out.println(max.get());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        } catch (Exception ignored) { }
         ex.shutdown();
     }
 

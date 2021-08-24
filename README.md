@@ -68,6 +68,7 @@ Zürich.
 * [`synchronized`](src/parallel_programming/SynchronizedExample.java)
 * [Wait/notify](src/parallel_programming/WaitNotifyExample.java)
 * [Wait/notify with different conditions](src/parallel_programming/WaitNotifyConditionsExample.java)
+* [Non-reusable barrier](src/parallel_programming/SimpleBarrier.java)
 
 ### Miscellaneous
 * [Karatsuba](src/miscellaneous/Karatsuba.java)

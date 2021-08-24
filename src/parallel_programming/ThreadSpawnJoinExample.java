@@ -15,9 +15,7 @@ public class ThreadSpawnJoinExample {
         for (int i = 0; i < 20; ++i) {
             try {
                 threads[i].join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            } catch (InterruptedException ignored) { }
         }
         System.out.println("All done.");
     }

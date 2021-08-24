@@ -18,9 +18,7 @@ public class WaitNotifyConditionsExample extends Thread {
         while (men > 0 || women > 2) {
             try {
                 womenQueue.await();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            } catch (InterruptedException ignored) { }
         }
         ++women;
         l.unlock();
@@ -42,9 +40,7 @@ public class WaitNotifyConditionsExample extends Thread {
         while (women > 0 || men > 2) {
             try {
                 menQueue.await();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            } catch (InterruptedException ignored) { }
         }
         ++men;
         l.unlock();

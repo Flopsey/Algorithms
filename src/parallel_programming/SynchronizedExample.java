@@ -10,9 +10,7 @@ public class SynchronizedExample {
         try {
             t1.join();
             t2.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        } catch (InterruptedException ignored) { }
         System.out.println(SynchronizedCounter.cnt);  // 2000
     }
 

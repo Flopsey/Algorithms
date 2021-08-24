@@ -11,9 +11,7 @@ public class WaitNotifyExample extends Thread {
             while (men > 0 || women > 2) {
                 try {
                     lock.wait();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                } catch (InterruptedException ignored) { }
             }
             ++women;
         }
@@ -31,9 +29,7 @@ public class WaitNotifyExample extends Thread {
             while (women > 0 || men > 2) {
                 try {
                     lock.wait();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                } catch (InterruptedException ignored) {}
             }
             ++men;
         }
