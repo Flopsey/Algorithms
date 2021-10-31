@@ -20,82 +20,82 @@ public class MergeSort {
         System.out.println(java.util.Arrays.toString(array3));  // [27, 34, 39, 48, 70, 86, 87, 91, 95, 100]
     }
 
-    public static void mergeSort(int[] A) {
-        mergeSort(A, 0, A.length - 1);
+    public static void mergeSort(int[] a) {
+        mergeSort(a, 0, a.length - 1);
     }
 
-    private static void mergeSort(int[] A, int left, int right) {
+    private static void mergeSort(int[] a, int left, int right) {
         if (left < right) {
             int middle = (left + right) / 2;
-            mergeSort(A, left, middle);
-            mergeSort(A, middle + 1, right);
-            merge(A, left, middle, right);
+            mergeSort(a, left, middle);
+            mergeSort(a, middle + 1, right);
+            merge(a, left, middle, right);
         }
     }
 
-    public static void straightMergeSort(int[] A) {
-        for (int length = 1; length < A.length; length *= 2) {
+    public static void straightMergeSort(int[] a) {
+        for (int length = 1; length < a.length; length *= 2) {
             int right = -1;
-            while (right + length < A.length) {
+            while (right + length < a.length) {
                 int left = right + 1;
                 int middle = left + length - 1;
-                right = Math.min(middle + length, A.length - 1);
-                merge(A, left, middle, right);
+                right = Math.min(middle + length, a.length - 1);
+                merge(a, left, middle, right);
             }
         }
     }
 
-    public static void naturalMergeSort(int[] A) {
+    public static void naturalMergeSort(int[] a) {
         int left;
         do {
             int right = -1;
             left = right + 1;
-            while (right < A.length - 1) {
+            while (right < a.length - 1) {
                 left = right + 1;
                 int middle = left;
-                while (middle < A.length - 1 && A[middle + 1] >= A[middle]) {
+                while (middle < a.length - 1 && a[middle + 1] >= a[middle]) {
                     ++middle;
                 }
-                if (middle < A.length - 1) {
+                if (middle < a.length - 1) {
                     right = middle + 1;
-                    while (right < A.length - 1 && A[right + 1] >= A[right]) {
+                    while (right < a.length - 1 && a[right + 1] >= a[right]) {
                         ++right;
                     }
-                    merge(A, left, middle, right);
+                    merge(a, left, middle, right);
                 } else {
-                    right = A.length - 1;
+                    right = a.length - 1;
                 }
             }
         } while (left > 0);
     }
 
-    private static void merge(int[] A, int left, int middle, int right) {
+    private static void merge(int[] a, int left, int middle, int right) {
         int[] B = new int[right - left + 1];
         int i = left;
         int j = middle + 1;
         int k = 0;
         while (i <= middle && j <= right) {
-            if (A[i] <= A[j]) {
-                B[k] = A[i];
+            if (a[i] <= a[j]) {
+                B[k] = a[i];
                 ++i;
             } else {
-                B[k] = A[j];
+                B[k] = a[j];
                 ++j;
             }
             ++k;
         }
         while (i <= middle) {
-            B[k] = A[i];
+            B[k] = a[i];
             ++i;
             ++k;
         }
         while (j <= right) {
-            B[k] = A[j];
+            B[k] = a[j];
             ++j;
             ++k;
         }
         for (k = left; k <= right; ++k) {
-            A[k] = B[k - left];
+            a[k] = B[k - left];
         }
 
     }

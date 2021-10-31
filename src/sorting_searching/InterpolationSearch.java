@@ -9,15 +9,15 @@ public class InterpolationSearch {
         System.out.println(interpolationSearch(array, 40));  // -1 (not found)
     }
 
-    public static int interpolationSearch(int[] A, int b) {
+    public static int interpolationSearch(int[] a, int key) {
         int left = 0;
-        int right = A.length - 1;
+        int right = a.length - 1;
         while (left <= right) {
-            int middle = left + ((b - A[left]) / (A[right] - A[left])) * (right - left);
-            if (A[middle] == b) {
+            int middle = left + ((key - a[left]) / (a[right] - a[left])) * (right - left);
+            if (a[middle] == key) {
                 return middle;
             }
-            if (b < A[middle]) {
+            if (key < a[middle]) {
                 right = middle - 1;
             } else {
                 left = middle + 1;
