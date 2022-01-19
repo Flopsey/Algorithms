@@ -1,15 +1,13 @@
-package graphs;
+package graph_algorithms;
 
 import data_structures.LinkedList;
-import data_structures.LinkedListQueue;
 import data_structures.Queue;
 
 public class BreadthFirstSearchShortestPath extends ShortestPath {
 
-    @SuppressWarnings("DuplicatedCode")
     public static void main(String[] args) {
         // Example:
-        GraphUnweighted graph = new AdjacencyListUnweighted(9, true);
+        Graph graph = new AdjacencyListGraph(9, true);
         graph.addEdge(0, 1);
         graph.addEdge(1, 3);
         graph.addEdge(1, 4);
@@ -26,8 +24,8 @@ public class BreadthFirstSearchShortestPath extends ShortestPath {
         System.out.println(breadthFirstSearchShortestPath(graph, 0, 7));  // [0, 1, 4, 7]
     }
 
-    public static LinkedList<Integer> breadthFirstSearchShortestPath(GraphUnweighted graph, int from, int to) {
-        Queue<Integer> queue = new LinkedListQueue<>();
+    public static LinkedList<Integer> breadthFirstSearchShortestPath(Graph graph, int from, int to) {
+        Queue<Integer> queue = new LinkedList<>();
         int vertexCount = graph.getVertexCount();
         int[] distance = new int[vertexCount];
         int[] predecessor = new int[vertexCount];

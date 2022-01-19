@@ -1,11 +1,19 @@
-# Algorithms and data structures
-Collection of various algorithms and data structures implemented in Java. The content of this is based on the courses
-[Algorithms and Data Structures](http://u.ethz.ch/WhFBD) and [Algorithms and Probability](http://u.ethz.ch/KPvXW) at ETH
-Zürich.
+# Algorithms
+
+Collection of various algorithms and data structures implemented in Java. The content of this is based on the
+courses [Algorithms and Data Structures](http://www.vorlesungsverzeichnis.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2021W&ansicht=KATALOGDATEN&lerneinheitId=146603&lang=en)
+and [Algorithms and Probability](http://www.vorlesungsverzeichnis.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2021S&ansicht=KATALOGDATEN&lerneinheitId=149533&lang=en)
+at ETH Zürich.
 
 ## Contents
-### Sorting, Searching
-* Sorting
+
+### Sorting and Searching Algorithms
+
+* Search
+    * [Binary search](src/sorting_searching/BinarySearch.java)
+    * [Interpolation search](src/sorting_searching/InterpolationSearch.java)
+    * [Linear search](src/sorting_searching/LinearSearch.java)
+* Sort
     * [Sortedness](src/sorting_searching/Sortedness.java)
     * [Bubble sort](src/sorting_searching/BubbleSort.java)
     * [Selection sort](src/sorting_searching/SelectionSort.java)
@@ -13,12 +21,9 @@ Zürich.
     * [Heap sort](src/sorting_searching/HeapSort.java)
     * [Merge sort](src/sorting_searching/MergeSort.java)
     * [Quicksort](src/sorting_searching/QuickSort.java)
-* Searching
-    * [Binary search](src/sorting_searching/BinarySearch.java)
-    * [Interpolation search](src/sorting_searching/InterpolationSearch.java)
-    * [Linear search](src/sorting_searching/LinearSearch.java)
 
 ### Dynamic Programming
+
 * [Maximum subarray sum](src/dynamic_programming/MaximumSubarraySum.java)
 * [Fibonacci sequence](src/dynamic_programming/Fibonacci.java)
 * [Longest increasing subsequence](src/dynamic_programming/LongestIncreasingSubsequence.java)
@@ -28,32 +33,30 @@ Zürich.
 * [Knapsack problem](src/dynamic_programming/Knapsack.java)
 
 ### Data Structures
-* [Linked List](src/data_structures/LinkedList.java)
-* Abstract data types
-    * [Stack](src/data_structures/Stack.java) with its
-      [implementation using a linked list](src/data_structures/LinkedListStack.java)
-    * [Queue](src/data_structures/Queue.java) with its
-      [implementation using a linked list](src/data_structures/LinkedListQueue.java)
-    * [Priority Queue](src/data_structures/PriorityQueue.java) with its
-      [implementation using a min-heap](src/data_structures/Heap.java)
-    * [Dictionary](src/data_structures/Dictionary.java) — implemented by:
-        * [Binary search tree](src/data_structures/BinarySearchTree.java)
 
-### Graphs
-* [Graph](src/graphs/Graph.java)
-  ([weighted](src/graphs/GraphWeighted.java)/[unweighted](src/graphs/GraphUnweighted.java))
-    * Adjacency matrix
-      ([weighted](src/graphs/AdjacencyMatrixWeighted.java)/[unweighted](src/graphs/AdjacencyMatrixUnweighted.java))
-    * Adjacency list
-      ([weighted](src/graphs/AdjacencyListWeighted.java)/[unweighted](src/graphs/AdjacencyListUnweighted.java))
-* [Depth-first search](src/graphs/DepthFirstSearch.java)
-* [Breadth-first search](src/graphs/BreadthFirstSearch.java)
-* [Topological sort](src/graphs/TopologicalSort.java)
+* Abstract data types
+    * [Stack](src/data_structures/Stack.java)
+    * [Queue](src/data_structures/Queue.java)
+    * [Priority Queue](src/data_structures/PriorityQueue.java)
+    * [Dictionary](src/data_structures/Dictionary.java)
+* [Linked list](src/data_structures/LinkedList.java)
+* [Min-Heap](src/data_structures/Heap.java)
+* [Binary search tree](src/data_structures/BinarySearchTree.java)
+
+### Graph Algorithms
+
+* [Graph](src/graph_algorithms/Graph.java)
+    * [Adjacency matrix](src/graph_algorithms/AdjacencyMatrixGraph.java)
+    * [Adjacency list](src/graph_algorithms/AdjacencyListGraph.java)
+* [Depth-first search](src/graph_algorithms/DepthFirstSearch.java)
+* [Breadth-first search](src/graph_algorithms/BreadthFirstSearch.java)
+* [Topological sort](src/graph_algorithms/TopologicalSort.java)
 * Shortest Paths
-    * [BFS shortest path](src/graphs/BreadthFirstSearchShortestPath.java)
-    * [Dijkstra](src/graphs/Dijkstra.java)
-    * [Bellman-Ford](src/graphs/BellmanFord.java)
-    * [Floyd-Warshall](src/graphs/FloydWarshall.java)
+    * [BFS shortest path](src/graph_algorithms/BreadthFirstSearchShortestPath.java)
+    * [Dijkstra](src/graph_algorithms/Dijkstra.java)
+    * [Bellman-Ford](src/graph_algorithms/BellmanFord.java)
+    * [Floyd-Warshall](src/graph_algorithms/FloydWarshall.java)
 
 ### Miscellaneous
+
 * [Karatsuba](src/miscellaneous/Karatsuba.java)

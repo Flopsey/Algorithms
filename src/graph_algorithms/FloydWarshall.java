@@ -1,11 +1,11 @@
-package graphs;
+package graph_algorithms;
 
 public class FloydWarshall extends ShortestPath {
 
     @SuppressWarnings("DuplicatedCode")
     public static void main(String[] args) {
         // Example:
-        GraphWeighted graph = new AdjacencyListWeighted(6, true);
+        Graph graph = new AdjacencyListGraph(6, true);
         graph.addEdge(0, 1, 2);
         graph.addEdge(0, 4, -1);
         graph.addEdge(1, 2, -3);
@@ -18,7 +18,7 @@ public class FloydWarshall extends ShortestPath {
         System.out.println(java.util.Arrays.deepToString(transitiveClosure(graph)));  // TODO: Verify that the output is correct
     }
 
-    public static double[][] floydWarshall(GraphWeighted graph) {
+    public static double[][] floydWarshall(Graph graph) {
         int n = graph.getVertexCount();
         double[][][] table = new double[n + 1][n][n];
         for (int u = 0; u < n; ++u) {
@@ -46,7 +46,7 @@ public class FloydWarshall extends ShortestPath {
         return table[n - 1];  // TODO: Compute actual shortest paths, not just their lengths
     }
 
-    public static boolean[][] transitiveClosure(GraphWeighted graph) {
+    public static boolean[][] transitiveClosure(Graph graph) {
         int n = graph.getVertexCount();
         boolean[][][] table = new boolean[n + 1][n][n];
         for (int u = 0; u < n; ++u) {

@@ -1,13 +1,13 @@
-package graphs;
+package graph_algorithms;
 
 import data_structures.LinkedList;
 
-public class AdjacencyListWeighted extends GraphWeighted {
+public class AdjacencyListGraph extends Graph {
 
-    public LinkedList<LinkedList<Integer>> adjacencyList;
-    public LinkedList<LinkedList<Double>> weights;
+    public final LinkedList<LinkedList<Integer>> adjacencyList;
+    public final LinkedList<LinkedList<Double>> weights;
 
-    public AdjacencyListWeighted(int n, boolean directed) {
+    public AdjacencyListGraph(int n, boolean directed) {
         super(n, directed);
         adjacencyList = new LinkedList<>();
         weights = new LinkedList<>();
@@ -22,7 +22,7 @@ public class AdjacencyListWeighted extends GraphWeighted {
         // Examples:
 
         // Undirected
-        GraphWeighted graph = new AdjacencyListWeighted(4, false);
+        Graph graph = new AdjacencyListGraph(4, false);
         constructExampleGraph(graph);
         System.out.println(graph.containsEdge(1, 3));  // true
         System.out.println(graph.outEdges(3).size());  // 3
@@ -30,7 +30,7 @@ public class AdjacencyListWeighted extends GraphWeighted {
         System.out.println(graph.getEdgeCount());  // 5
 
         // Directed
-        GraphWeighted digraph = new AdjacencyListWeighted(4, true);
+        Graph digraph = new AdjacencyListGraph(4, true);
         constructExampleGraph(digraph);
         System.out.println(digraph.containsEdge(1, 3));  // false
         System.out.println(digraph.outEdges(3).size());  // 2
@@ -45,7 +45,7 @@ public class AdjacencyListWeighted extends GraphWeighted {
 
     @Override
     public LinkedList<Integer> outEdges(int vertex) {
-        return adjacencyList.get(vertex);
+        return LinkedList.from(adjacencyList.get(vertex));
     }
 
     @Override

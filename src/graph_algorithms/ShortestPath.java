@@ -1,4 +1,4 @@
-package graphs;
+package graph_algorithms;
 
 import data_structures.LinkedList;
 

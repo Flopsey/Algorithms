@@ -1,15 +1,14 @@
-package graphs;
+package graph_algorithms;
 
+import data_structures.LinkedList;
 import data_structures.KeyedHeap;
 import data_structures.KeyedPriorityQueue;
-import data_structures.LinkedList;
 
 public class Dijkstra extends ShortestPath {
 
-    @SuppressWarnings("DuplicatedCode")
     public static void main(String[] args) {
         // Example:
-        GraphWeighted graph = new AdjacencyListWeighted(9, true);
+        Graph graph = new AdjacencyListGraph(9, true);
         graph.addEdge(0, 1, 1);
         graph.addEdge(1, 3, 2);
         graph.addEdge(1, 4, 4);
@@ -26,7 +25,7 @@ public class Dijkstra extends ShortestPath {
         System.out.println(dijkstra(graph, 0, 7));  // [0, 1, 3, 4, 7]
     }
 
-    public static LinkedList<Integer> dijkstra(GraphWeighted graph, int from, int to) {
+    public static LinkedList<Integer> dijkstra(Graph graph, int from, int to) {
         int vertexCount = graph.getVertexCount();
         double[] distance = new double[vertexCount];
         int[] predecessor = new int[vertexCount];

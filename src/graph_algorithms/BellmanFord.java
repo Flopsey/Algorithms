@@ -1,4 +1,4 @@
-package graphs;
+package graph_algorithms;
 
 import data_structures.LinkedList;
 
@@ -7,7 +7,7 @@ public class BellmanFord extends ShortestPath {
     @SuppressWarnings("DuplicatedCode")
     public static void main(String[] args) {
         // Example:
-        GraphWeighted graph = new AdjacencyListWeighted(6, true);
+        Graph graph = new AdjacencyListGraph(6, true);
         graph.addEdge(0, 1, 2);
         graph.addEdge(0, 4, -1);
         graph.addEdge(1, 2, -3);
@@ -19,7 +19,7 @@ public class BellmanFord extends ShortestPath {
         System.out.println(bellmanFord(graph, 0, 5));  // [0, 1, 2, 3, 4, 5]
     }
 
-    public static LinkedList<Integer> bellmanFord(GraphWeighted graph, int from, int to) {
+    public static LinkedList<Integer> bellmanFord(Graph graph, int from, int to) {
         double[] distance = new double[graph.getVertexCount()];
         int[] predecessor = new int[graph.getVertexCount()];
         for (int i = 0; i < graph.getVertexCount(); ++i) {

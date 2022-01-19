@@ -139,8 +139,8 @@ public class Knapsack {
     }
 
     public static class Item {
-        int value;
-        int weight;
+        final int value;
+        final int weight;
         String label;
 
         public Item(int value, int weight) {

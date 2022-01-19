@@ -1,7 +1,6 @@
-package graphs;
+package graph_algorithms;
 
 import data_structures.LinkedList;
-import data_structures.LinkedListQueue;
 import data_structures.Queue;
 
 public class BreadthFirstSearch {
@@ -9,7 +8,7 @@ public class BreadthFirstSearch {
     @SuppressWarnings("DuplicatedCode")
     public static void main(String[] args) {
         // Example:
-        GraphUnweighted graph = new AdjacencyMatrixUnweighted(10, true);
+        Graph graph = new AdjacencyMatrixGraph(10, true);
         graph.addEdge(0, 1);
         graph.addEdge(0, 2);
         graph.addEdge(1, 2);
@@ -25,8 +24,8 @@ public class BreadthFirstSearch {
         breadthFirstSearch(graph);
     }
 
-    public static void breadthFirstSearch(GraphUnweighted graph) {
-        Queue<Integer> queue = new LinkedListQueue<>();
+    public static void breadthFirstSearch(Graph graph) {
+        Queue<Integer> queue = new LinkedList<>();
         LinkedList<Integer> visited = new LinkedList<>();  // TODO: Use Dictionary once AVLTree is finished
         int vertexCount = graph.getVertexCount();
         for (int s = 0; s < vertexCount; ++s) {

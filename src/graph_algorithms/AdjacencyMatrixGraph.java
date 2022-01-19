@@ -1,12 +1,12 @@
-package graphs;
+package graph_algorithms;
 
 import data_structures.LinkedList;
 
-public class AdjacencyMatrixWeighted extends GraphWeighted {
+public class AdjacencyMatrixGraph extends Graph {
 
-    public double[][] adjacencyMatrix;
+    public final double[][] adjacencyMatrix;
 
-    public AdjacencyMatrixWeighted(int n, boolean directed) {
+    public AdjacencyMatrixGraph(int n, boolean directed) {
         super(n, directed);
         adjacencyMatrix = new double[n][n];
         for (int from = 0; from < adjacencyMatrix.length; ++from) {
@@ -24,7 +24,7 @@ public class AdjacencyMatrixWeighted extends GraphWeighted {
         // Examples:
 
         // Undirected
-        GraphWeighted graph = new AdjacencyMatrixWeighted(4, false);
+        Graph graph = new AdjacencyMatrixGraph(4, false);
         constructExampleGraph(graph);
         System.out.println(graph.containsEdge(1, 3));  // true
         System.out.println(graph.outEdges(3).size());  // 3
@@ -32,7 +32,7 @@ public class AdjacencyMatrixWeighted extends GraphWeighted {
         System.out.println(graph.getEdgeCount());  // 5
 
         // Directed
-        GraphWeighted digraph = new AdjacencyMatrixWeighted(4, true);
+        Graph digraph = new AdjacencyMatrixGraph(4, true);
         constructExampleGraph(digraph);
         System.out.println(digraph.containsEdge(1, 3));  // false
         System.out.println(digraph.outEdges(3).size());  // 2

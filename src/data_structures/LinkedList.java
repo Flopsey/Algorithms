@@ -3,7 +3,7 @@ package data_structures;
 import java.util.NoSuchElementException;
 
 // See also: java.util.LinkedList
-public class LinkedList<E> implements Iterable<E> {
+public class LinkedList<E> implements Iterable<E>, Stack<E>, Queue<E> {
 
     /* TODO: Add tests */
 
@@ -11,52 +11,52 @@ public class LinkedList<E> implements Iterable<E> {
     protected ListNode<E> last;
     protected int size;
 
-    public E get(int i) {
-        return getNode(i).value;
+    public E get(int index) {
+        return getNode(index).value;
     }
 
-    public void set(int i, E value) {
-        getNode(i).value = value;
+    public void set(int index, E value) {
+        getNode(index).value = value;
     }
 
-    private ListNode<E> getNode(int i) {
-        if (i < 0 || i >= size) {
+    private ListNode<E> getNode(int index) {
+        if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
-        ListNode<E> node;
-        if (i <= size / 2) {
-            node = first;
-            for (int j = 0; j < i; ++j) {
-                node = node.next;
+        ListNode<E> cur;
+        if (index <= size / 2) {
+            cur = first;
+            for (int j = 0; j < index; ++j) {
+                cur = cur.next;
             }
         } else {
-            node = last;
-            for (int j = size - 1; j > i; --j) {
-                node = node.prev;
+            cur = last;
+            for (int j = size - 1; j > index; --j) {
+                cur = cur.prev;
             }
         }
-        return node;
+        return cur;
     }
 
-    public void addFirst(E e) {
-        ListNode<E> newFirst = new ListNode<>(e);
+    public void addFirst(E value) {
+        ListNode<E> newFirst = new ListNode<>(value);
         if (isEmpty()) {
             last = newFirst;
         } else {
-            newFirst.next = first;
             first.prev = newFirst;
+            newFirst.next = first;
         }
         first = newFirst;
         ++size;
     }
 
-    public void addLast(E e) {
-        ListNode<E> newLast = new ListNode<>(e);
+    public void addLast(E value) {
+        ListNode<E> newLast = new ListNode<>(value);
         if (isEmpty()) {
             first = newLast;
         } else {
-            newLast.prev = last;
             last.next = newLast;
+            newLast.prev = last;
         }
         last = newLast;
         ++size;
@@ -66,30 +66,30 @@ public class LinkedList<E> implements Iterable<E> {
         if (isEmpty()) {
             return null;
         }
-        E retValue = first.value;
-        if (first.next != null) {
-            first.next.prev = null;
+        E value = first.value;
+        if (first == last) {
+            clear();
         } else {
-            last = null;
+            first = first.next;
+            first.prev = null;
+            --size;
         }
-        first = first.next;
-        --size;
-        return retValue;
+        return value;
     }
 
     public E removeLast() {
         if (isEmpty()) {
             return null;
         }
-        E retValue = last.value;
-        if (last.prev != null) {
-            last.prev.next = null;
+        E value = last.value;
+        if (first == last) {
+            clear();
         } else {
-            first = null;
+            last = last.prev;
+            last.next = null;
+            --size;
         }
-        last = last.prev;
-        --size;
-        return retValue;
+        return value;
     }
 
     public int size() {
@@ -112,8 +112,8 @@ public class LinkedList<E> implements Iterable<E> {
 
     public int indexOf(Object o) {
         int i = 0;
-        for (E e : this) {
-            if (o.equals(e)) {
+        for (E value : this) {
+            if (o.equals(value)) {
                 return i;
             }
             ++i;
@@ -121,8 +121,33 @@ public class LinkedList<E> implements Iterable<E> {
         return -1;
     }
 
+    public static <E> LinkedList<E> from(Iterable<? extends E> iterable) {
+        LinkedList<E> list = new LinkedList<>();
+        for (E e : iterable) {
+            list.addLast(e);
+        }
+        return list;
+    }
+
     public java.util.Iterator<E> iterator() {
-        return new Iterator();
+        return new java.util.Iterator<>() {
+            private ListNode<E> cur = first;
+
+            @Override
+            public boolean hasNext() {
+                return cur != null;
+            }
+
+            @Override
+            public E next() {
+                if (cur == null) {
+                    throw new NoSuchElementException();
+                }
+                ListNode<E> next = cur;
+                cur = cur.next;
+                return next.value;
+            }
+        };
     }
 
     @Override
@@ -137,6 +162,36 @@ public class LinkedList<E> implements Iterable<E> {
         return "[" + repr + "]";
     }
 
+    @Override
+    public void push(E value) {
+        addFirst(value);
+    }
+
+    @Override
+    public E pop() {
+        return removeFirst();
+    }
+
+    @Override
+    public E top() {
+        return !isEmpty() ? get(0) : null;
+    }
+
+    @Override
+    public void enqueue(E value) {
+        addLast(value);
+    }
+
+    @Override
+    public E dequeue() {
+        return removeFirst();
+    }
+
+    @Override
+    public E front() {
+        return !isEmpty() ? get(0) : null;
+    }
+
     protected static class ListNode<E> {
         protected E value;
         protected ListNode<E> prev;
@@ -149,37 +204,6 @@ public class LinkedList<E> implements Iterable<E> {
         @Override
         public String toString() {
             return value.toString();
-        }
-    }
-
-    private class Iterator implements java.util.Iterator<E> {
-
-        private ListNode<E> current;
-
-        @Override
-        public boolean hasNext() {
-            if (isEmpty()) {
-                return false;
-            } else if (current == null) {
-                return true;
-            }
-            return current.next != null;
-        }
-
-        @Override
-        public E next() {
-            if (isEmpty()) {
-                throw new NoSuchElementException();
-            }
-            if (current == null) {
-                current = first;
-            } else {
-                if (current.next == null) {
-                    throw new NoSuchElementException();
-                }
-                current = current.next;
-            }
-            return current.value;
         }
     }
 
