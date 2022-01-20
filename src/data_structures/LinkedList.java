@@ -11,6 +11,14 @@ public class LinkedList<E> implements Iterable<E>, Stack<E>, Queue<E> {
     protected ListNode<E> last;
     protected int size;
 
+    public static <E> LinkedList<E> from(Iterable<? extends E> iterable) {
+        LinkedList<E> list = new LinkedList<>();
+        for (E e : iterable) {
+            list.addLast(e);
+        }
+        return list;
+    }
+
     public E get(int index) {
         return getNode(index).value;
     }
@@ -119,14 +127,6 @@ public class LinkedList<E> implements Iterable<E>, Stack<E>, Queue<E> {
             ++i;
         }
         return -1;
-    }
-
-    public static <E> LinkedList<E> from(Iterable<? extends E> iterable) {
-        LinkedList<E> list = new LinkedList<>();
-        for (E e : iterable) {
-            list.addLast(e);
-        }
-        return list;
     }
 
     public java.util.Iterator<E> iterator() {

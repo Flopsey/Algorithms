@@ -1,8 +1,8 @@
 package graph_algorithms;
 
-import data_structures.LinkedList;
 import data_structures.KeyedHeap;
 import data_structures.KeyedPriorityQueue;
+import data_structures.LinkedList;
 
 public class Dijkstra extends ShortestPath {
 

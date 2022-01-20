@@ -131,8 +131,8 @@ public class BinarySearchTree<E extends Comparable<? super E>> implements Dictio
     protected static class SearchResult<E> {
 
         protected final TreeNode<E> node;
-        protected TreeNode<E> parent;
         protected final int side;
+        protected TreeNode<E> parent;
 
         public SearchResult(TreeNode<E> node, TreeNode<E> parent, int side) {
             this.node = node;

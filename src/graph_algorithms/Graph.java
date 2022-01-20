@@ -15,6 +15,14 @@ public abstract class Graph {
         this.directed = directed;
     }
 
+    protected static void constructExampleGraph(Graph graph) {
+        graph.addEdge(0, 1, 1);
+        graph.addEdge(1, 2, 2);
+        graph.addEdge(2, 3, 3);
+        graph.addEdge(3, 1, 4);
+        graph.addEdge(3, 0, 5);
+    }
+
     public int getVertexCount() {
         return vertexCount;
     }
@@ -50,13 +58,5 @@ public abstract class Graph {
     }
 
     public abstract double cost(int from, int to);
-
-    protected static void constructExampleGraph(Graph graph) {
-        graph.addEdge(0, 1, 1);
-        graph.addEdge(1, 2, 2);
-        graph.addEdge(2, 3, 3);
-        graph.addEdge(3, 1, 4);
-        graph.addEdge(3, 0, 5);
-    }
 
 }
