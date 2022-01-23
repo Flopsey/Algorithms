@@ -57,6 +57,10 @@ at ETH Zürich.
     * [Bellman-Ford](src/graph_algorithms/BellmanFord.java)
     * [Floyd-Warshall](src/graph_algorithms/FloydWarshall.java)
 
+### Number Theory
+
+* [Euclidean algorithm](src/number_theory/euclidean_algorithm.py)
+
 ### Miscellaneous
 
 * [Karatsuba](src/miscellaneous/Karatsuba.java)
