@@ -61,6 +61,7 @@ at ETH Zürich.
 
 * [Euclidean algorithm](src/number_theory/euclidean_algorithm.py)
 * [Extended Euclidean algorithm](src/number_theory/extended_euclidean_algorithm.py)
+* [Diffie-Hellman protocol](src/number_theory/diffie_hellman.py)
 
 ### Miscellaneous
 
