@@ -60,6 +60,7 @@ at ETH Zürich.
 ### Number Theory
 
 * [Euclidean algorithm](src/number_theory/euclidean_algorithm.py)
+* [Extended Euclidean algorithm](src/number_theory/extended_euclidean_algorithm.py)
 
 ### Miscellaneous
 
