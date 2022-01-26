@@ -1,8 +1,9 @@
 # Algorithms
 
-Collection of various algorithms and data structures implemented in Java. The content of this is mostly based on the
-courses [Algorithms and Data Structures](http://www.vorlesungsverzeichnis.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2021W&ansicht=KATALOGDATEN&lerneinheitId=146603&lang=en)
-and [Algorithms and Probability](http://www.vorlesungsverzeichnis.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2021S&ansicht=KATALOGDATEN&lerneinheitId=149533&lang=en)
+Collection of various algorithms and data structures. The content of this is mostly based on the
+courses [Algorithms and Data Structures](http://www.vorlesungsverzeichnis.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2021W&ansicht=KATALOGDATEN&lerneinheitId=146603&lang=en),
+[Algorithms and Probability](http://www.vorlesungsverzeichnis.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2021S&ansicht=KATALOGDATEN&lerneinheitId=149533&lang=en),
+and [Discrete Mathematics](http://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2021W&ansicht=KATALOGDATEN&lerneinheitId=147043&lang=en)
 at ETH Zürich.
 
 ## Contents
