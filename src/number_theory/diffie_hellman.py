@@ -1,28 +1,27 @@
 import secrets
-from numbers import Integral
 
 
 class Agent:
-    p: Integral  # Public prime
-    g: Integral  # Public generator
-    x: Integral  # Secret key
-    y: Integral  # Public key
-    k: Integral  # Shared key
+    p: int  # Public prime
+    g: int  # Public generator
+    x: int  # Secret key
+    y: int  # Public key
+    k: int  # Shared key
 
-    def __init__(self, p: Integral, g: Integral):
+    def __init__(self, p: int, g: int):
         self.p = p
         self.g = g
         self.x = secrets.randbelow(p - 1)
         self.y = pow(g, self.x, p)
 
-    def key(self) -> Integral:
+    def key(self) -> int:
         return self.y
 
-    def receive_key(self, y_other: Integral):
+    def receive_key(self, y_other: int):
         self.k = pow(y_other, self.x, self.p)
 
 
-def protocol(p: Integral, g: Integral):
+def protocol(p: int, g: int):
     alice = Agent(p, g)
     bob = Agent(p, g)
     y_a, y_b = alice.key(), bob.key()  # Insecure channel

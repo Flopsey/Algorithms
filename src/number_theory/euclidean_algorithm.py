@@ -1,11 +1,8 @@
-from numbers import Integral
-
-
-def gcd(a: Integral, b: Integral) -> Integral:
+def gcd(a: int, b: int) -> int:
     while b != 0:
         a, b = b, a % b
     return a
 
 
-def lcm(a: Integral, b: Integral) -> Integral:
+def lcm(a: int, b: int) -> int:
     return (a * b) // gcd(a, b)

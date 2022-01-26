@@ -1,7 +1,4 @@
-from numbers import Integral
-
-
-def extended_gcd(a: Integral, b: Integral) -> tuple[Integral, tuple[Integral, Integral]]:
+def extended_gcd(a: int, b: int) -> tuple[int, tuple[int, int]]:
     u1, u2, v1, v2 = 1, 0, 0, 1
     while b != 0:
         a, (q, b) = b, divmod(a, b)
