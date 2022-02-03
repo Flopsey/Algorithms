@@ -57,6 +57,8 @@ at ETH Zürich.
     * [Dijkstra](src/graph_algorithms/Dijkstra.java)
     * [Bellman-Ford](src/graph_algorithms/BellmanFord.java)
     * [Floyd-Warshall](src/graph_algorithms/FloydWarshall.java)
+* Minimum Spanning Trees
+  * [Prim](src/graph_algorithms/Prim.java)
 
 ### Number Theory
 
