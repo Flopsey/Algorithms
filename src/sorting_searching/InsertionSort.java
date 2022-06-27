@@ -1,5 +1,7 @@
 package sorting_searching;
 
+import java.util.Comparator;
+
 public class InsertionSort {
 
     public static void main(String[] args) {
@@ -13,6 +15,19 @@ public class InsertionSort {
         for (int i = 1; i < a.length; ++i) {
             int k = -(BinarySearch.binarySearchIterative(a, a[i], 0, i - 1) + 1);
             int temp = a[i];
+            System.arraycopy(a, k, a, k + 1, i - k);
+            a[k] = temp;
+        }
+    }
+
+    public static <T extends Comparable<? super T>> void insertionSort(T[] a) {
+        insertionSort(a, Comparator.naturalOrder());
+    }
+
+    public static <T> void insertionSort(T[] a, Comparator<T> comp) {
+        for (int i = 1; i < a.length; ++i) {
+            int k = -(BinarySearch.binarySearchIterative(a, a[i], comp, 0, i - 1) + 1);
+            T temp = a[i];
             System.arraycopy(a, k, a, k + 1, i - k);
             a[k] = temp;
         }

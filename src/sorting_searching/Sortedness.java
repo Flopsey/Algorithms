@@ -1,5 +1,7 @@
 package sorting_searching;
 
+import java.util.Comparator;
+
 public class Sortedness {
 
     public static void main(String[] args) {
@@ -13,6 +15,19 @@ public class Sortedness {
     public static boolean isSorted(int[] a) {
         for (int i = 0; i < a.length - 1; ++i) {
             if (a[i] > a[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static <T extends Comparable<? super T>> boolean isSorted(T[] a) {
+        return isSorted(a, Comparator.naturalOrder());
+    }
+
+    public static <T> boolean isSorted(T[] a, Comparator<T> comp) {
+        for (int i = 0; i < a.length - 1; ++i) {
+            if (comp.compare(a[i], a[i + 1]) > 0) {
                 return false;
             }
         }

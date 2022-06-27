@@ -1,5 +1,7 @@
 package sorting_searching;
 
+import java.util.Comparator;
+
 public class QuickSort {
 
     public static void main(String[] args) {
@@ -22,6 +24,23 @@ public class QuickSort {
         quickSort(a, k + 1, right);
     }
 
+    public static <T extends Comparable<? super T>> void quickSort(T[] a) {
+        quickSort(a, Comparator.naturalOrder(), 0, a.length - 1);
+    }
+
+    public static <T> void quickSort(T[] a, Comparator<T> comp) {
+        quickSort(a, comp, 0, a.length - 1);
+    }
+
+    private static <T> void quickSort(T[] a, Comparator<T> comp, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        int k = partition(a, comp, left, right);
+        quickSort(a, comp, left, k - 1);
+        quickSort(a, comp, k + 1, right);
+    }
+
     private static int partition(int[] a, int left, int right) {
         int i = left;
         int j = right - 1;
@@ -40,6 +59,29 @@ public class QuickSort {
             }
         } while (i < j);
         int temp = a[i];
+        a[i] = a[right];
+        a[right] = temp;
+        return i;
+    }
+
+    private static <T> int partition(T[] a, Comparator<T> comp, int left, int right) {
+        int i = left;
+        int j = right - 1;
+        T pivot = a[right];
+        do {
+            while (i < right && comp.compare(a[i], pivot) < 0) {
+                ++i;
+            }
+            while (j > left && comp.compare(a[j], pivot) > 0) {
+                --j;
+            }
+            if (i < j) {
+                T temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        } while (i < j);
+        T temp = a[i];
         a[i] = a[right];
         a[right] = temp;
         return i;
