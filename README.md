@@ -66,6 +66,11 @@ at ETH Zürich.
 * [Extended Euclidean algorithm](src/number_theory/extended_euclidean_algorithm.py)
 * [Diffie-Hellman protocol](src/number_theory/diffie_hellman.py)
 
+### Digital Building Blocks
+* [Half Adder](src/digital_building_blocks/HalfAdder.v)
+* [Full Adder](src/digital_building_blocks/FullAdder.v)
+* [N-bit Ripple-Carry Adder](src/digital_building_blocks/RippleCarryAdder.v)
+
 ### Miscellaneous
 
 * [Karatsuba](src/miscellaneous/Karatsuba.java)
