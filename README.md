@@ -70,6 +70,7 @@ at ETH Zürich.
 * [Half Adder](src/digital_building_blocks/HalfAdder.v)
 * [Full Adder](src/digital_building_blocks/FullAdder.v)
 * [N-bit Ripple-Carry Adder](src/digital_building_blocks/RippleCarryAdder.v)
+* [Subtraction](src/digital_building_blocks/Subtraction.v)
 
 ### Miscellaneous
 
